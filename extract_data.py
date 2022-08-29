@@ -60,5 +60,3 @@ print(f"Total amount of spaces: {get_amount_ifc_spaces(ifc)}")
 print(f"Total amount of stories: {get_amount_of_stories(ifc)}")
 print(f"Unique materials: {get_all_unique_materials(ifc)}")
 print(f"Total floor areal: {round(get_total_floor_area(ifc), 2)} m2")
-
-print("test")
