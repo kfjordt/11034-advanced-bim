@@ -3,7 +3,7 @@ import ifcopenshell.util.element
 import ifcopenshell.geom
 
 # Initializing IFC model
-DUPLEX = 'Duplex_A_20110907.ifc'
+DUPLEX = r'C:\Users\kfjor\Google Drev\DTU\7. semester\11034 Advanced BIM\Duplex_A_20110907.ifc'
 ifc = ifcopenshell.open(DUPLEX)
 
 def get_amount_ifc_spaces(ifc_model):
@@ -60,3 +60,5 @@ print(f"Total amount of spaces: {get_amount_ifc_spaces(ifc)}")
 print(f"Total amount of stories: {get_amount_of_stories(ifc)}")
 print(f"Unique materials: {get_all_unique_materials(ifc)}")
 print(f"Total floor areal: {round(get_total_floor_area(ifc), 2)} m2")
+
+print("test")
