@@ -1,0 +1,22 @@
+Enter the cost and densities of the materials listed here. 
+
+[kr./CUBIC_METRE;kg/CUBIC_METRE]
+i.e. Concrete: 1000;1000
+
+Plasterboard: 1000;1000
+Metal - Stud Layer: 1000;1000
+Masonry - Concrete Block: 1000;1000
+Misc. Air Layers - Air Space: 1000;1000
+Concrete - Cast In Situ: 1000;1000
+Masonry - Brick: 1000;1000
+Insulation / Thermal Barriers - Rigid insulation: 1000;1000
+Site - Grass: 1000;1000
+Roofing - Barrier: 1000;1000
+Roofing - EPDM Membrane: 1000;1000
+Wood - Sheathing - plywood: 1000;1000
+Wood - Dimensional Lumber: 1000;1000
+Concrete: 1000;1000
+Wood - Flooring: 1000;1000
+Insulation / Thermal Barriers - Semi-rigid insulation: 1000;1000
+Ceramic Tile: 1000;1000
+Masonry - Grout: 1000;1000
