@@ -3,7 +3,7 @@ import ifcopenshell.util.element
 import ifcopenshell.geom
 
 # Initializing IFC model
-DUPLEX = r'C:\Users\kfjor\Google Drev\DTU\7. semester\11034 Advanced BIM\Duplex_A_20110907.ifc'
+DUPLEX = r'Duplex_A_20110907.ifc'
 ifc = ifcopenshell.open(DUPLEX)
 
 def get_amount_ifc_spaces(ifc_model):
