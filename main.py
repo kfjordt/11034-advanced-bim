@@ -127,7 +127,7 @@ def parse_template_file(template_file_path):
     material_cost_density = {}
 
     with open(template_file_path) as file:
-        contents = file.read()
+        contents = file.read()  
 
         # Parsing template file according to the relevant data values
         for line in contents.split("\n")[5:-1]:
@@ -186,6 +186,12 @@ def calculate_loads(ifc_export, cost_densities):
 
 
 def main():
+            
+    print("----------------------------------------------")
+    print("| Program started. Follow instructions below |")
+    print("----------------------------------------------")
+
+
     load_building_flag = int(input("Enter \"0\" to load building, and \"1\" to calculate building: "))
 
     if load_building_flag == 0: # User has chosen to load a new building
@@ -220,6 +226,10 @@ def main():
         with open("IFC Export.json", "w") as outfile:
             outfile.write(json.dumps(db, indent=4))
 
+        print("-----------------------------------------------------")
+        print("| Building Loaded. Input material data in .txt file |")
+        print("-----------------------------------------------------")
+        
     elif load_building_flag == 1: # User has chosen to calculate building
         
         template_file_path = 'Material cost and densities.txt'
