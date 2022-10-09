@@ -22,4 +22,6 @@ The property sets of the building (*IfcRelDefinesByProperties* and *IfcPropertyS
 
 The specific builings elements used in this case, are slabs, walls, beams and columns. All loadbearing elements in a standard BIM model. In order to get this use case into play, a geometry must exist for the aforementioned elements. Furthermore materials must first be granted on these elements, with defined cost and weight per volume material. When these parameters are defined from other use cases, the tool can get into play. The output of the tool will be the cost and self load of the structural elements in the BIM model. When handing this of to the structural or cost disciplines, this might result in a change to the structural elements used initially as input for the tool. E.g. if the structure is too costly or the load of the structure and live load exeeds the bearing capacity of the current static system.
 
-
+## How to use the tool
+The script (main.py) is divided into two parts, which makes it optimal to run from a regular terminal (as opposed to running it from the Blender command window, which might cause issues with the current directory). The script will generate a JSON file, a template file to handle user input and (optionally) an error log. These files will be saved to the directory you are running the script from.
+NB. Control flow and error handling was not prioritized in the creation of the script, so make sure to input correct data types, that the sub-steps are followed correctly, etc.
