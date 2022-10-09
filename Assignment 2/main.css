@@ -1,0 +1,263 @@
+/* written by Tim McGinley 2022 */
+
+/* model*/
+model- {
+	display:block;
+	background-color:rgb(255, 255, 255);
+	width:50%;
+	border:none;
+	color:#1b1b1b;
+	margin:auto;
+	padding-bottom:50px;
+	FLOAT:LEFT;
+	height:100%;
+}
+
+view- {
+	display:block;
+	background-color:rgb(255, 255, 255);
+	width:50%;
+	border:none;
+	color:#1b1b1b;
+	margin:auto;
+	padding-bottom:50px;
+	FLOAT:LEFT;
+	height:100%;
+}
+
+/* follows the project, site, building, floor hierachy */
+
+/* ifcProject*/
+project- {
+	display:block;
+	/* padding:5px; */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:12px;
+	background-color:rgb(255, 255, 255);
+	width:100%;
+	border:none;
+	color:#1b1b1b;
+	margin:auto;
+	Float:left;
+}
+input- {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:8px;
+	background-color:rgb(255, 255, 255);
+	width:100%;
+	color:#1b1b1b;
+	Float:left;
+}
+
+/*ifcSite */
+site- {
+	display:block;
+	/* margin-top: 20px; */
+}
+
+/* This is not normally used but has uses */
+core- {
+	display:block;
+	background-color:#000;
+	position:relative;
+	padding:2px;
+	left:100px;
+	margin-bottom:0px;
+	border-color: #000;
+	width:50px;
+	color:#1b1b1b;
+}
+
+/*ifcBuilding */
+building- {
+	display:block;
+	background-color:rgb(215, 215, 215);
+	padding:30px;
+	border-color: rgb(63, 2, 154);
+	/* width:90%; */
+	color:#1b1b1b;
+	/*border-top: 4px solid black;*/
+	overflow: hidden;
+	margin:auto;
+}
+
+/* This could also be zone
+it is container for a block of floors */
+segment- {
+	display:block;
+	background-color:#fff;
+	border-style: solid;
+	position:relative;
+	border-color: #000;
+	left:-100px;
+	margin: auto;
+	padding:2px;
+	width:225px;
+	margin-top:2px;
+	color:#1b1b1b;
+}
+
+/* ifcBuildingStorey */
+floor- {
+	display:block;
+	background-color:#fff;
+	position:relative;
+	padding:2px;
+	padding-left:10px;
+	width:80%;
+	margin:auto;
+	margin-top:2px;
+	color:#1b1b1b;
+	border-bottom: 4px solid black;
+}
+
+/* VIEW DEFINITIONS...
+
+/* plan - this contains a plan of the currently selected floor*/
+plan- {
+	display:block;
+	background-color:#ddd;
+	margin: auto;
+	padding:0px;
+	border-color: #000;
+	width:90%;
+	color:#1b1b1b;
+	/*border-top: 4px solid black;*/
+	min-height: 20px;
+	overflow: hidden;
+	margin:auto;
+	margin-top:5px;
+}
+
+/* plan - this contains a plan of the currently selected floor*/
+.plan {
+	display:block;
+	background-color:#fff;
+	margin:auto;
+	margin-top:5%;
+	margin-bottom:5%;
+	height:100px;
+	width: 80%;
+	color:#1b1b1b;
+	/*border-top: 4px solid black;*/
+	min-height: 20px;
+	overflow: hidden;
+	border: 3px solid black;
+}
+
+/* properties - this contains the calculated properties*/
+props1- {
+	display:block;
+	background-color:#ddd;
+	margin: auto;
+	padding:0px;
+	border-color: #000;
+	width:90%;
+	color:#1b1b1b;
+	/*border-top: 4px solid black;*/
+	min-height: 20px;
+	overflow: hidden;
+	margin:auto;
+	margin-top:5px;
+}
+props2- {
+	display:block;
+	background-color:#ddd;
+	margin: auto;
+	padding:0px;
+	border-color: #000;
+	width:90%;
+	color:#1b1b1b;
+	/*border-top: 4px solid black;*/
+	min-height: 20px;
+	overflow: hidden;
+	margin:auto;
+	margin-top:5px;
+}
+
+button {
+	margin: 10px;
+}
+/* MEP stuff is in this floor */
+mep- {
+	display:block;
+	background-color:#fff;
+	position:relative;
+	padding-left:10px;
+	width:220px;
+	height:0px;
+	left:0px;
+	margin-top:0px;
+	color:#1b1b1b;
+	border-top: 2px dashed cyan;
+}
+
+/* ground line */
+ground-{
+	display:block;
+	margin: auto;
+	overflow: auto;
+	padding-top:0px;
+	padding:2px;
+	padding-left:10px;
+	width:90%;
+	border-top: 6px solid black;
+	
+}
+
+/* STYLING */
+
+/* floor styling */
+.floor_name {
+	float:left;
+	padding-left:20px;
+}
+
+/* floor styles (based on elevation) */
+
+.floor_upper {
+	border-left: 2px dashed rgb(121, 6, 6);
+	border-right: 2px dashed black;
+}
+.floor_ground {
+	background-color: #eee;
+	border-left: 2px dashed gray;
+	border-right: 2px dashed gray;
+	border-bottom: none;
+}
+.floor_lower {
+	background-color: #ddd;
+	border-left: 2px solid brown;
+	border-right: 2px solid brown;
+	
+}
+
+.floor_stats {
+	
+	float:right;
+	padding:0px;
+	font-style: italic;
+	border-radius:5px;
+	background-color:#fff;
+	margin-right:10px;
+	margin-top:0px;
+	
+}
+table {
+	table-layout: fixed ;
+	width: 100% ;
+	background-color:rgb(255, 255, 255);
+  }
+tr {
+	border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-collapse: collapse;
+}
+td {
+	width: 50% ;
+  	padding: 10px ;
+}
+input {
+	width: 90%;
+}
