@@ -9,6 +9,7 @@ function main() {
 	plan('Click a floor to see its properties.');
 	addTextToProps()
 	setInitialStage()
+	hideAllFloorPlans()
 	
 	// jQuery method executed each time an HTML entity of 'floor-' type is clicked
 	$('floor-').each(function() {
@@ -21,6 +22,8 @@ function main() {
 			var floorCost = loadsCostByFloors[floorName]["Cost"]
 			var floorLoad = loadsCostByFloors[floorName]["Load"]
 
+			controlFloorplan(floorName)
+
 			// Update the plan with the relevant information
 			changePlan(formattedPlanText(floorName, floorLoad, floorCost))
 
@@ -29,7 +32,21 @@ function main() {
 	});
 
 }
+function hideAllFloorPlans() {
+	var allFloors = document.getElementsByClassName("parent");
+	for (var i = 0; i < allFloors.length; i++) {
+		allFloors[i].style.display = "none";
+	}
+}
+function controlFloorplan(floorName) {
+	hideAllFloorPlans()
 
+	var selectedFloor = document.querySelectorAll('[level="' + floorName + '"]')[0];
+	console.log(selectedFloor)
+
+	selectedFloor.style.display = "block";
+	
+}
 function setInitialStage() {
 	// Find all HTML entities representing IfcSlab
 	var allFloors = document.querySelectorAll('floor-[level]')
