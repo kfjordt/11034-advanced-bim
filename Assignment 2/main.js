@@ -33,17 +33,23 @@ function main() {
 
 }
 function hideAllFloorPlans() {
+	// Get all entities containing SVG
 	var allFloors = document.getElementsByClassName("parent");
+
 	for (var i = 0; i < allFloors.length; i++) {
+		// To hide entities, set their display prop to none
 		allFloors[i].style.display = "none";
 	}
 }
 function controlFloorplan(floorName) {
+	// Make sure that no overlapping will happen
 	hideAllFloorPlans()
 
+	// Select the currently pressed floor
 	var selectedFloor = document.querySelectorAll('[level="' + floorName + '"]')[0];
 	console.log(selectedFloor)
 
+	// Unhide the floor plan
 	selectedFloor.style.display = "block";
 	
 }

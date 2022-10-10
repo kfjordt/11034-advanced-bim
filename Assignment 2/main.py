@@ -6,6 +6,11 @@ from shapely.geometry import Polygon
 from shapely.ops import unary_union
 from assignment1 import *
 
+# TO-DO:
+# Reorganize the html generation so it is more structured
+# Comment the SVG parts of the code
+# Clean up CSS
+
 STOREY_BY_TYPE = {
     "IfcWall": ["PSet_Revit_Constraints", "Base Constraint"],
     "IfcDoor": ["PSet_Revit_Constraints", "Level"],
