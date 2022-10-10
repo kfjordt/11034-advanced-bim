@@ -261,3 +261,61 @@ td {
 input {
 	width: 90%;
 }
+
+parent {
+	position: relative;
+	width: 90%;
+}
+.parent {
+    position: relative;
+	width: 90%;
+  }
+  
+  svg {
+    display: block;
+  }
+  
+  svg.primary {
+    position: absolute;
+    /* color: rgb(255, 0, 0); */
+    top: 0;
+  }
+svg-one {
+	display: flex;
+	justify-content: center;
+}
+
+floor_plan- {
+	display:block;
+	background-color:#ddd;
+	margin: auto;
+	padding:0px;
+	border-color: #000;
+	width:90%;
+	color:#1b1b1b;
+	/*border-top: 4px solid black;*/
+	min-height: 20px;
+	overflow: hidden;
+	margin:auto;
+	margin-top:5px;
+	display: flex;
+	justify-content: center;
+}
+
+floor_plan- {
+	display:block;
+	background-color:#ddd;
+	margin: auto;
+	padding:0px;
+	border-color: #000;
+	width:90%;
+	color:#1b1b1b;
+	/*border-top: 4px solid black;*/
+	min-height: 20px;
+	overflow: hidden;
+	margin:auto;
+	margin-top:5px;
+	display: flex;
+	justify-content: center;
+}
+
