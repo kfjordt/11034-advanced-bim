@@ -1,6 +1,120 @@
 import json
 import ifcopenshell
+import ifcopenshell.geom
+import ifcopenshell.util.element
+from shapely.geometry import Polygon
+from shapely.ops import unary_union
 from assignment1 import *
+
+STOREY_BY_TYPE = {
+    "IfcWall": ["PSet_Revit_Constraints", "Base Constraint"],
+    "IfcDoor": ["PSet_Revit_Constraints", "Level"],
+    "IfcWindow": ["PSet_Revit_Constraints", "Level"]
+}
+
+COLORS_BY_IFC = {
+    "IfcWall": "black",
+    "IfcDoor": "darkgrey",
+    "IfcWindow": "darkgrey"
+}
+
+UNITS_BY_IFC_UNITS = {
+    "CUBIC_METRE": "m3",
+    "SQUARE_METRE": "m2",
+    "METRE": "m",
+    "SECOND": "s",
+    "INCH": "inch",
+    "CUBIC_FEET": "ft2",
+    "SQUARE_FEET": "ft3"
+}
+
+def get_polygons_from_model(model, ifc_type):
+    settings = ifcopenshell.geom.settings()
+    settings.set(settings.USE_WORLD_COORDS, True)
+
+    list_of_polygon_coords = {}
+
+    pset_path = STOREY_BY_TYPE[ifc_type]
+    
+    for element in model.by_type(ifc_type):
+
+        element_psets = ifcopenshell.util.element.get_psets(element)
+        element_storey = element_psets[pset_path[0]][pset_path[1]]
+
+
+        if element_storey not in list_of_polygon_coords.keys():
+            list_of_polygon_coords[element_storey] = []
+
+        try:
+            shape = ifcopenshell.geom.create_shape(settings, element)
+            faces, verts = shape.geometry.faces, shape.geometry.verts
+        except:
+            continue
+        
+        grouped_verts = [[round(verts[i], 3), round(verts[i + 1], 3)] for i in range(0, len(verts), 3)]
+        grouped_faces = [[faces[i], faces[i + 1], faces[i + 2]] for i in range(0, len(faces), 3)]
+
+        element_polygons = []
+        for face in grouped_faces:
+            current_verts = [grouped_verts[idx] for idx in face]
+
+            element_polygons.append(Polygon(current_verts))
+
+        try:
+            union_polygon = unary_union(element_polygons)
+            x, y = union_polygon.exterior.xy
+            list_of_polygon_coords[element_storey].append(list(zip(x,y)))
+        except AttributeError:
+            for element_polygon in element_polygons:
+                x, y = element_polygon.exterior.xy
+                list_of_polygon_coords[element_storey].append(list(zip(x,y)))
+
+    
+    return list_of_polygon_coords
+
+def create_parent_html(width, height, size_factor, level):
+    html_string = ""
+    html_string += f"<div class=\"parent\" level=\"{level}\">\n"
+    html_string += f"<svg class=\"svg-one\" width=\"{round(width*size_factor, 2)}\" height=\"{round(height*size_factor, 2)}\">\n"
+    html_string += f"<rect x=\"0\" y=\"0\" width=\"{round(width*size_factor, 2)}\" height=\"{round(height*size_factor, 2)}\" fill=\"#F4F6F6\"/>\n"
+    html_string += "</svg>\n"
+
+    return html_string
+
+def convert_polygons_to_svg(polygon_coords, width, height, x_translation, y_translation, size_factor):
+    html_string = ""
+
+    for ifc_type, polygons in polygon_coords.items():
+
+        for element_pts in polygons:
+            x_coords = [round((pt[0]+x_translation)*size_factor,2) for pt in element_pts]
+            y_coords = [round((pt[1]+y_translation)*size_factor,2) for pt in element_pts]
+
+            element_string = ""
+            for x_coord, y_coord in zip(x_coords, y_coords):
+                element_string += f"{x_coord},{y_coord} "
+
+            color = COLORS_BY_IFC[ifc_type]
+
+            html_string += f"<svg class=\"primary\" width=\"{round(width*size_factor, 2)}\" height=\"{round(height*size_factor, 2)}\" fill=\"{color}\">\n"
+            html_string += f"<polygon points=\"{element_string[:-1]}\"\>\n"
+            html_string += "</svg>\n"
+        
+    return html_string
+
+def calculate_translation_props(polygons):
+    all_points = []
+    for ifc_type in polygons.values():
+        for polygon in ifc_type.values():
+            all_points += [item for sublist in polygon for item in sublist]
+
+    min_x, min_y = min([pt[0] for pt in all_points]), min([pt[1] for pt in all_points]) 
+    max_x, max_y = max([pt[0] for pt in all_points]), max([pt[1] for pt in all_points]) 
+
+    x_translation, y_translation = 0 - min_x, 0 - min_y
+    width, height = max_x - min_x, max_y - min_y
+
+    return x_translation, y_translation, width, height
 
 def main_html(model, volume_unit, materials):
     # Generate the initial HTML, which also references the JS and CSS files
@@ -68,6 +182,9 @@ def custom_html(model, volume_unit, materials):
     html_string += "<props2result-  id=\"building_cost\"->\n"
     html_string += "</props2result->\n"
     html_string += "</props2->\n"
+    html_string += "<floor_plan->\n"
+    html_string += create_svg_floor_plans(model)
+    html_string += "</floor_plan->\n"
     html_string += "<p id = \"info\"></p>\n"
     html_string += "</view->\n"
 
@@ -133,23 +250,35 @@ def material_table_html(unique_materials, volume_unit):
     
     return html_string
 
-def format_unit(ifc_unit):
-    # A simple map to convert the raw IFC units to more common notation
-    formatted_units_by_ifc_units = {
-        "CUBIC_METRE": "m3",
-        "SQUARE_METRE": "m2",
-        "METRE": "m",
-        "SECOND": "s",
-        "INCH": "inch",
-        "CUBIC_FEET": "ft2",
-        "SQUARE_FEET": "ft3"
-    }
+def create_svg_floor_plans(ifc_model):
+    polygons_by_types = {}
+    polygons_by_types["IfcWall"] = get_polygons_from_model(ifc_model, "IfcWall")
+    polygons_by_types["IfcWindow"] = get_polygons_from_model(ifc_model, "IfcWindow")
+    polygons_by_types["IfcDoor"] = get_polygons_from_model(ifc_model, "IfcDoor")
+
+    x_translation, y_translation, width, height = calculate_translation_props(polygons_by_types)
+    SIZE_FACTOR = 30
+
+    polygons_by_levels = {}
+    for ifc_type, levels in polygons_by_types.items():
+        for level, polygons in levels.items():
+            if level not in polygons_by_levels.keys():
+                polygons_by_levels[level] = {}
+
+            polygons_by_levels[level][ifc_type] = polygons
+
+    html_string = ""
+    for level in list(polygons_by_types.values())[0].keys():
+        html_string += create_parent_html(width, height, SIZE_FACTOR, level)
+        html_string += convert_polygons_to_svg(polygons_by_levels[level], width,height, x_translation, y_translation, SIZE_FACTOR)
+        html_string += "</div>"
     
-    return formatted_units_by_ifc_units[ifc_unit]
+    return html_string
 
 def main():
     # Load IFC model to memory
-    file_path = input("Enter file path of IFC model here: ")
+    # file_path = input("Enter file path of IFC model here: ")
+    file_path = r'C:\Users\kfjor\Google Drev\DTU\7. semester\11034 Advanced BIM\repo\Assignment 2\Duplex_A_20110907.ifc'
     ifc = ifcopenshell.open(file_path)
 
     # Fetch all structural elements in model
@@ -162,7 +291,7 @@ def main():
 
     # Get the volume unit of the IFC model
     volume_unit = [unit.Name for unit in ifc.by_type("IfcProject")[0].UnitsInContext.Units if unit.UnitType == "VOLUMEUNIT"][0]
-    formatted_volume_unit = format_unit(volume_unit)
+    formatted_volume_unit = UNITS_BY_IFC_UNITS[volume_unit]
 
     # Generate the HTML string 
     html_string = main_html(ifc, formatted_volume_unit, unique_materials)
