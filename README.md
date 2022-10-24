@@ -1,9 +1,4 @@
 # 11034 Advanced BIM
-## Group members:
-- Thor Bardrum, s193831  
-- Jens Dahl Kristian, s193850  
-- Kasper Fuglsang Jordt, s193801  
-- Umair Abid Mughal, s222394
 
 ## Questions:
 - Describe the use case you have chosen
