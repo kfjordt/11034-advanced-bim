@@ -1,0 +1,3480 @@
+<html>
+<head>
+<link rel='stylesheet' href='main.css'></link>
+<script src='main.js'></script>
+<script src='ifc_export.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js'></script>
+</head>
+<body onload="main()">
+<model->
+<project- name="Duplex Apartment">
+<site- lat="(41, 52, 27, 840000)" long="(-87, -38, -21, -839999)" elev="0" address="Chicago, IL">
+<building->
+<floor- class="floor_upper" name='Roof'  level='2' elev="6.00000000000039" >Roof <span class="floor_stats">6.0</span> </floor->
+<floor- class="floor_upper" name='Level 2'  level='1' elev="3.100000000000378" >Level 2 <span class="floor_stats">3.1</span> </floor->
+<floor- class="floor_ground" name='Level 1'  level='0' elev="0.0" >Level 1 <span class="floor_stats">0.0</span> </floor->
+<ground-></ground->
+<floor- class="floor_lower" name='T/FDN'  level='-1' elev="-1.25" >T/FDN <span class="floor_stats">-1.25</span> </floor->
+</building->
+</site->
+<table id="user_input">
+<tr>
+<td>
+<label for="column1">
+
+</label>
+</td>
+<td>
+<label for="column2">
+Densities [kr./m3]
+</label>
+</td>
+<td>
+<label for="column3">
+Cost [kr./m3]
+</label>
+</td>
+</tr>
+<tr>
+<td>
+<label for="text">Plasterboard</label>
+</td>
+<td><input type="text" id="Plasterboard_density"/></td>
+<td><input type="text" id="Plasterboard_cost"/></td>
+</tr>
+<tr>
+<td>
+<label for="text">Metal - Stud Layer</label>
+</td>
+<td><input type="text" id="Metal - Stud Layer_density"/></td>
+<td><input type="text" id="Metal - Stud Layer_cost"/></td>
+</tr>
+<tr>
+<td>
+<label for="text">Masonry - Concrete Block</label>
+</td>
+<td><input type="text" id="Masonry - Concrete Block_density"/></td>
+<td><input type="text" id="Masonry - Concrete Block_cost"/></td>
+</tr>
+<tr>
+<td>
+<label for="text">Misc. Air Layers - Air Space</label>
+</td>
+<td><input type="text" id="Misc. Air Layers - Air Space_density"/></td>
+<td><input type="text" id="Misc. Air Layers - Air Space_cost"/></td>
+</tr>
+<tr>
+<td>
+<label for="text">Concrete - Cast In Situ</label>
+</td>
+<td><input type="text" id="Concrete - Cast In Situ_density"/></td>
+<td><input type="text" id="Concrete - Cast In Situ_cost"/></td>
+</tr>
+<tr>
+<td>
+<label for="text">Masonry - Brick</label>
+</td>
+<td><input type="text" id="Masonry - Brick_density"/></td>
+<td><input type="text" id="Masonry - Brick_cost"/></td>
+</tr>
+<tr>
+<td>
+<label for="text">Insulation / Thermal Barriers - Rigid insulation</label>
+</td>
+<td><input type="text" id="Insulation / Thermal Barriers - Rigid insulation_density"/></td>
+<td><input type="text" id="Insulation / Thermal Barriers - Rigid insulation_cost"/></td>
+</tr>
+<tr>
+<td>
+<label for="text">Site - Grass</label>
+</td>
+<td><input type="text" id="Site - Grass_density"/></td>
+<td><input type="text" id="Site - Grass_cost"/></td>
+</tr>
+<tr>
+<td>
+<label for="text">Roofing - Barrier</label>
+</td>
+<td><input type="text" id="Roofing - Barrier_density"/></td>
+<td><input type="text" id="Roofing - Barrier_cost"/></td>
+</tr>
+<tr>
+<td>
+<label for="text">Roofing - EPDM Membrane</label>
+</td>
+<td><input type="text" id="Roofing - EPDM Membrane_density"/></td>
+<td><input type="text" id="Roofing - EPDM Membrane_cost"/></td>
+</tr>
+<tr>
+<td>
+<label for="text">Wood - Sheathing - plywood</label>
+</td>
+<td><input type="text" id="Wood - Sheathing - plywood_density"/></td>
+<td><input type="text" id="Wood - Sheathing - plywood_cost"/></td>
+</tr>
+<tr>
+<td>
+<label for="text">Wood - Dimensional Lumber</label>
+</td>
+<td><input type="text" id="Wood - Dimensional Lumber_density"/></td>
+<td><input type="text" id="Wood - Dimensional Lumber_cost"/></td>
+</tr>
+<tr>
+<td>
+<label for="text">Concrete</label>
+</td>
+<td><input type="text" id="Concrete_density"/></td>
+<td><input type="text" id="Concrete_cost"/></td>
+</tr>
+<tr>
+<td>
+<label for="text">Wood - Flooring</label>
+</td>
+<td><input type="text" id="Wood - Flooring_density"/></td>
+<td><input type="text" id="Wood - Flooring_cost"/></td>
+</tr>
+<tr>
+<td>
+<label for="text">Insulation / Thermal Barriers - Semi-rigid insulation</label>
+</td>
+<td><input type="text" id="Insulation / Thermal Barriers - Semi-rigid insulation_density"/></td>
+<td><input type="text" id="Insulation / Thermal Barriers - Semi-rigid insulation_cost"/></td>
+</tr>
+<tr>
+<td>
+<label for="text">Ceramic Tile</label>
+</td>
+<td><input type="text" id="Ceramic Tile_density"/></td>
+<td><input type="text" id="Ceramic Tile_cost"/></td>
+</tr>
+<tr>
+<td>
+<label for="text">Masonry - Grout</label>
+</td>
+<td><input type="text" id="Masonry - Grout_density"/></td>
+<td><input type="text" id="Masonry - Grout_cost"/></td>
+</tr>
+</table>
+</project->
+</model->
+<view->
+<plan-></plan->
+<props1-></props1->
+<props2->
+<button type="button" onclick="calculateCostAndLoads()">Calculate building</button>
+<props2result-  id="building_cost"->
+</props2result->
+</props2->
+<floor_plan->
+<div class="parent" level="Level 1">
+<svg class="svg-one" width="265.5" height="535.5">
+<rect x="0" y="0" width="265.5" height="535.5" fill="#F4F6F6"/>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="75.03,414.75 75.03,522.24 78.75,522.24 78.75,414.75 75.03,414.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="252.24,292.5 126.21,292.5 126.21,307.29 252.24,307.29 252.24,292.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="139.29,228.21 13.26,228.21 13.26,243.0 139.29,243.0 139.29,228.21"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="126.21,243.0 126.21,292.5 124.5,292.5 124.5,300.75 141.0,300.75 141.0,292.5 139.29,292.5 139.29,243.0 141.0,243.0 141.0,234.75 124.5,234.75 124.5,243.0 126.21,243.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="187.53,223.65 143.85,223.65 143.85,227.37 187.53,227.37 187.53,223.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="186.75,13.26 186.75,120.75 190.47,120.75 190.47,13.26 186.75,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="264.75,68.16 264.75,30.66 264.75,0.75 252.24,0.75 252.24,30.66 252.24,68.16 252.24,356.4 252.24,378.9 252.24,522.24 264.75,522.24 264.75,378.9 264.75,356.4 264.75,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="13.26,504.84 13.26,467.34 13.26,179.1 13.26,156.6 13.26,13.26 0.75,13.26 0.75,156.6 0.75,179.1 0.75,467.34 0.75,504.84 0.75,522.24 13.26,522.24 13.26,504.84"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="187.53,233.16 187.53,256.02 187.53,292.5 191.25,292.5 191.25,256.02 191.25,233.16 191.25,204.9 187.53,204.9 187.53,233.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="74.25,302.28 74.25,330.6 77.97,330.6 77.97,302.28 77.97,279.42 77.97,243.0 74.25,243.0 74.25,279.42 74.25,302.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="79.8,522.24 0.75,522.24 0.75,534.75 79.8,534.75 104.19,534.75 107.19,534.75 252.24,534.75 264.75,534.75 264.75,522.24 252.24,522.24 107.19,522.24 104.19,522.24 79.8,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="0.75,0.75 0.75,13.26 13.26,13.26 158.31,13.26 161.31,13.26 185.7,13.26 252.24,13.26 252.24,0.75 185.7,0.75 161.31,0.75 158.31,0.75 13.26,0.75 0.75,0.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="121.65,311.85 252.24,311.85 252.24,307.29 121.65,307.29 121.65,311.85"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="126.21,307.29 126.21,243.0 121.65,243.0 121.65,307.29 126.21,307.29"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="77.97,311.85 121.65,311.85 121.65,308.13 77.97,308.13 77.97,311.85"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="139.29,223.65 139.29,292.5 143.85,292.5 143.85,223.65 139.29,223.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="139.29,223.65 13.26,223.65 13.26,228.21 139.29,228.21 139.29,223.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="107.19,534.75 107.76,534.75 251.67,534.75 252.24,534.75 252.24,532.86 252.24,522.24 251.28,522.24 108.15,522.24 107.19,522.24 107.19,532.86 107.19,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,2.64 13.26,13.26 14.22,13.26 157.35,13.26 158.31,13.26 158.31,2.64 158.31,0.75 157.74,0.75 13.83,0.75 13.26,0.75 13.26,2.64"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,356.4 252.24,357.36 252.24,377.94 252.24,378.9 262.86,378.9 264.75,378.9 264.75,378.33 264.75,356.97 264.75,356.4 262.86,356.4 252.24,356.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.75,157.17 0.75,178.53 0.75,179.1 2.64,179.1 13.26,179.1 13.26,178.14 13.26,157.56 13.26,156.6 2.64,156.6 0.75,156.6 0.75,157.17"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,70.44 264.75,70.44 264.75,28.38 265.5,70.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,28.38 265.5,70.44 264.75,28.38 265.5,28.38"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,28.38 264.75,28.38 264.75,28.38 265.5,28.38"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,28.38 265.5,28.38 264.75,28.38 265.5,28.38"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,28.38 264.75,28.38 264.75,30.66 265.5,28.38"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,30.66 265.5,28.38 264.75,30.66 265.5,30.66"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,30.66 264.75,30.66 264.75,30.66 265.5,30.66"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,30.66 265.5,30.66 264.75,30.66 265.5,30.66"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,30.66 264.75,30.66 264.75,68.16 265.5,30.66"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,68.16 265.5,30.66 264.75,68.16 265.5,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,68.16 264.75,68.16 264.75,68.16 265.5,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,68.16 265.5,68.16 264.75,68.16 265.5,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,68.16 264.75,68.16 264.75,70.44 265.5,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,70.44 265.5,68.16 264.75,70.44 265.5,70.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,70.44 264.75,70.44 264.75,70.44 265.5,70.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,70.44 265.5,70.44 264.75,70.44 265.5,70.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="264.75,68.16 264.75,30.66 264.75,28.38 264.75,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="264.75,70.44 264.75,68.16 264.75,28.38 264.75,70.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="264.75,68.16 264.75,70.44 264.75,70.44 264.75,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="264.75,68.16 264.75,70.44 264.75,68.16 264.75,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="264.75,30.66 264.75,30.66 264.75,28.38 264.75,30.66"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="264.75,28.38 264.75,30.66 264.75,28.38 264.75,28.38"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,28.38 265.5,30.66 265.5,68.16 265.5,28.38"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,28.38 265.5,68.16 265.5,70.44 265.5,28.38"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,70.44 265.5,70.44 265.5,68.16 265.5,70.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,68.16 265.5,70.44 265.5,68.16 265.5,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,28.38 265.5,30.66 265.5,30.66 265.5,28.38"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="265.5,28.38 265.5,30.66 265.5,28.38 265.5,28.38"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,28.38 251.49,28.38 251.49,28.38 252.24,28.38"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,28.38 252.24,28.38 251.49,28.38 252.24,28.38"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,28.38 251.49,28.38 251.49,30.66 252.24,28.38"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,30.66 252.24,28.38 251.49,30.66 252.24,30.66"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,30.66 251.49,30.66 251.49,30.66 252.24,30.66"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,30.66 252.24,30.66 251.49,30.66 252.24,30.66"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,30.66 251.49,30.66 251.49,68.16 252.24,30.66"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,68.16 252.24,30.66 251.49,68.16 252.24,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,68.16 251.49,68.16 251.49,68.16 252.24,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,68.16 252.24,68.16 251.49,68.16 252.24,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,68.16 251.49,68.16 251.49,70.44 252.24,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,70.44 252.24,68.16 251.49,70.44 252.24,70.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,70.44 251.49,70.44 251.49,70.44 252.24,70.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,70.44 252.24,70.44 251.49,70.44 252.24,70.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,70.44 251.49,70.44 251.49,28.38 252.24,70.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,28.38 252.24,70.44 251.49,28.38 252.24,28.38"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="251.49,30.66 251.49,28.38 251.49,68.16 251.49,30.66"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="251.49,68.16 251.49,28.38 251.49,70.44 251.49,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="251.49,28.38 251.49,30.66 251.49,28.38 251.49,28.38"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="251.49,28.38 251.49,30.66 251.49,30.66 251.49,28.38"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="251.49,68.16 251.49,68.16 251.49,70.44 251.49,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="251.49,68.16 251.49,70.44 251.49,70.44 251.49,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,68.16 252.24,28.38 252.24,30.66 252.24,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,70.44 252.24,28.38 252.24,68.16 252.24,70.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,28.38 252.24,30.66 252.24,28.38 252.24,28.38"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,30.66 252.24,30.66 252.24,28.38 252.24,30.66"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,70.44 252.24,68.16 252.24,68.16 252.24,70.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,70.44 252.24,70.44 252.24,68.16 252.24,70.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="263.22,30.66 263.22,30.66 264.75,30.66 263.22,30.66"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="264.75,30.66 263.22,30.66 264.75,30.66 264.75,30.66"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="264.75,30.66 264.75,30.66 264.75,68.16 264.75,30.66"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="264.75,68.16 264.75,30.66 264.75,68.16 264.75,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="264.75,68.16 264.75,68.16 263.22,68.16 264.75,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="263.22,68.16 264.75,68.16 263.22,68.16 263.22,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="263.22,68.16 263.22,68.16 263.22,30.66 263.22,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="263.22,30.66 263.22,68.16 263.22,30.66 263.22,30.66"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="264.75,30.66 263.22,30.66 264.75,68.16 264.75,30.66"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="263.22,30.66 263.22,68.16 264.75,68.16 263.22,30.66"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="264.75,68.16 263.22,30.66 264.75,30.66 264.75,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="264.75,68.16 263.22,68.16 263.22,30.66 264.75,68.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,465.06 0.75,465.06 0.75,507.12 0.0,465.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,507.12 0.0,465.06 0.75,507.12 0.0,507.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,507.12 0.75,507.12 0.75,507.12 0.0,507.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,507.12 0.0,507.12 0.75,507.12 0.0,507.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,507.12 0.75,507.12 0.75,504.84 0.0,507.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,504.84 0.0,507.12 0.75,504.84 0.0,504.84"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,504.84 0.75,504.84 0.75,504.84 0.0,504.84"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,504.84 0.0,504.84 0.75,504.84 0.0,504.84"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,504.84 0.75,504.84 0.75,467.34 0.0,504.84"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,467.34 0.0,504.84 0.75,467.34 0.0,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,467.34 0.75,467.34 0.75,467.34 0.0,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,467.34 0.0,467.34 0.75,467.34 0.0,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,467.34 0.75,467.34 0.75,465.06 0.0,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,465.06 0.0,467.34 0.75,465.06 0.0,465.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,465.06 0.75,465.06 0.75,465.06 0.0,465.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,465.06 0.0,465.06 0.75,465.06 0.0,465.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.75,467.34 0.75,504.84 0.75,507.12 0.75,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.75,465.06 0.75,467.34 0.75,507.12 0.75,465.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.75,467.34 0.75,465.06 0.75,465.06 0.75,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.75,467.34 0.75,465.06 0.75,467.34 0.75,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.75,504.84 0.75,504.84 0.75,507.12 0.75,504.84"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.75,507.12 0.75,504.84 0.75,507.12 0.75,507.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,507.12 0.0,504.84 0.0,467.34 0.0,507.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,507.12 0.0,467.34 0.0,465.06 0.0,507.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,465.06 0.0,465.06 0.0,467.34 0.0,465.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,467.34 0.0,465.06 0.0,467.34 0.0,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,507.12 0.0,504.84 0.0,504.84 0.0,507.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.0,507.12 0.0,504.84 0.0,507.12 0.0,507.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,507.12 14.01,507.12 14.01,507.12 13.26,507.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,507.12 13.26,507.12 14.01,507.12 13.26,507.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,507.12 14.01,507.12 14.01,504.84 13.26,507.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,504.84 13.26,507.12 14.01,504.84 13.26,504.84"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,504.84 14.01,504.84 14.01,504.84 13.26,504.84"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,504.84 13.26,504.84 14.01,504.84 13.26,504.84"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,504.84 14.01,504.84 14.01,467.34 13.26,504.84"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,467.34 13.26,504.84 14.01,467.34 13.26,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,467.34 14.01,467.34 14.01,467.34 13.26,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,467.34 13.26,467.34 14.01,467.34 13.26,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,467.34 14.01,467.34 14.01,465.06 13.26,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,465.06 13.26,467.34 14.01,465.06 13.26,465.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,465.06 14.01,465.06 14.01,465.06 13.26,465.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,465.06 13.26,465.06 14.01,465.06 13.26,465.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,465.06 14.01,465.06 14.01,507.12 13.26,465.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,507.12 13.26,465.06 14.01,507.12 13.26,507.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="14.01,504.84 14.01,507.12 14.01,467.34 14.01,504.84"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="14.01,467.34 14.01,507.12 14.01,465.06 14.01,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="14.01,507.12 14.01,504.84 14.01,507.12 14.01,507.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="14.01,507.12 14.01,504.84 14.01,504.84 14.01,507.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="14.01,467.34 14.01,467.34 14.01,465.06 14.01,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="14.01,467.34 14.01,465.06 14.01,465.06 14.01,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,467.34 13.26,507.12 13.26,504.84 13.26,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,465.06 13.26,507.12 13.26,467.34 13.26,465.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,507.12 13.26,504.84 13.26,507.12 13.26,507.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,504.84 13.26,504.84 13.26,507.12 13.26,504.84"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,465.06 13.26,467.34 13.26,467.34 13.26,465.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,465.06 13.26,465.06 13.26,467.34 13.26,465.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="2.28,504.84 2.28,504.84 0.75,504.84 2.28,504.84"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.75,504.84 2.28,504.84 0.75,504.84 0.75,504.84"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.75,504.84 0.75,504.84 0.75,467.34 0.75,504.84"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.75,467.34 0.75,504.84 0.75,467.34 0.75,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.75,467.34 0.75,467.34 2.28,467.34 0.75,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="2.28,467.34 0.75,467.34 2.28,467.34 2.28,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="2.28,467.34 2.28,467.34 2.28,504.84 2.28,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="2.28,504.84 2.28,467.34 2.28,504.84 2.28,504.84"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.75,504.84 2.28,504.84 0.75,467.34 0.75,504.84"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="2.28,504.84 2.28,467.34 0.75,467.34 2.28,504.84"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.75,467.34 2.28,504.84 0.75,504.84 0.75,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.75,467.34 2.28,467.34 2.28,504.84 0.75,467.34"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,258.3 186.78,258.3 186.78,230.88 187.53,258.3"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,230.88 187.53,258.3 186.78,230.88 187.53,230.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,230.88 186.78,230.88 186.78,230.88 187.53,230.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,230.88 187.53,230.88 186.78,230.88 187.53,230.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,230.88 186.78,230.88 186.78,233.16 187.53,230.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,233.16 187.53,230.88 186.78,233.16 187.53,233.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,233.16 186.78,233.16 186.78,233.16 187.53,233.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,233.16 187.53,233.16 186.78,233.16 187.53,233.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,233.16 186.78,233.16 186.78,256.02 187.53,233.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,256.02 187.53,233.16 186.78,256.02 187.53,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,256.02 186.78,256.02 186.78,256.02 187.53,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,256.02 187.53,256.02 186.78,256.02 187.53,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,256.02 186.78,256.02 186.78,258.3 187.53,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,258.3 187.53,256.02 186.78,258.3 187.53,258.3"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,258.3 186.78,258.3 186.78,258.3 187.53,258.3"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,258.3 187.53,258.3 186.78,258.3 187.53,258.3"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="186.78,256.02 186.78,233.16 186.78,230.88 186.78,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="186.78,258.3 186.78,256.02 186.78,230.88 186.78,258.3"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="186.78,256.02 186.78,258.3 186.78,258.3 186.78,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="186.78,256.02 186.78,258.3 186.78,256.02 186.78,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="186.78,233.16 186.78,233.16 186.78,230.88 186.78,233.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="186.78,230.88 186.78,233.16 186.78,230.88 186.78,230.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,230.88 187.53,233.16 187.53,256.02 187.53,230.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,230.88 187.53,256.02 187.53,258.3 187.53,230.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,258.3 187.53,258.3 187.53,256.02 187.53,258.3"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,256.02 187.53,258.3 187.53,256.02 187.53,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,230.88 187.53,233.16 187.53,233.16 187.53,230.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,230.88 187.53,233.16 187.53,230.88 187.53,230.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,230.88 191.25,230.88 191.25,230.88 192.0,230.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,230.88 192.0,230.88 191.25,230.88 192.0,230.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,230.88 191.25,230.88 191.25,233.16 192.0,230.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,233.16 192.0,230.88 191.25,233.16 192.0,233.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,233.16 191.25,233.16 191.25,233.16 192.0,233.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,233.16 192.0,233.16 191.25,233.16 192.0,233.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,233.16 191.25,233.16 191.25,256.02 192.0,233.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,256.02 192.0,233.16 191.25,256.02 192.0,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,256.02 191.25,256.02 191.25,256.02 192.0,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,256.02 192.0,256.02 191.25,256.02 192.0,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,256.02 191.25,256.02 191.25,258.3 192.0,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,258.3 192.0,256.02 191.25,258.3 192.0,258.3"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,258.3 191.25,258.3 191.25,258.3 192.0,258.3"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,258.3 192.0,258.3 191.25,258.3 192.0,258.3"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,258.3 191.25,258.3 191.25,230.88 192.0,258.3"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,230.88 192.0,258.3 191.25,230.88 192.0,230.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.25,233.16 191.25,230.88 191.25,256.02 191.25,233.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.25,256.02 191.25,230.88 191.25,258.3 191.25,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.25,230.88 191.25,233.16 191.25,230.88 191.25,230.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.25,230.88 191.25,233.16 191.25,233.16 191.25,230.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.25,256.02 191.25,256.02 191.25,258.3 191.25,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.25,256.02 191.25,258.3 191.25,258.3 191.25,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,256.02 192.0,230.88 192.0,233.16 192.0,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,258.3 192.0,230.88 192.0,256.02 192.0,258.3"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,230.88 192.0,233.16 192.0,230.88 192.0,230.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,233.16 192.0,233.16 192.0,230.88 192.0,233.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,258.3 192.0,256.02 192.0,256.02 192.0,258.3"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.0,258.3 192.0,258.3 192.0,256.02 192.0,258.3"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.06,233.16 189.06,233.16 189.06,256.02 189.06,233.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.06,256.02 189.06,233.16 189.06,256.02 189.06,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.06,256.02 189.06,256.02 187.53,256.02 189.06,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,256.02 189.06,256.02 187.53,256.02 187.53,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,256.02 187.53,256.02 187.53,233.16 187.53,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,233.16 187.53,256.02 187.53,233.16 187.53,233.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,233.16 187.53,233.16 189.06,233.16 187.53,233.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.06,233.16 187.53,233.16 189.06,233.16 189.06,233.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.06,256.02 189.06,233.16 187.53,256.02 189.06,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.06,233.16 187.53,233.16 187.53,256.02 189.06,233.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,256.02 189.06,233.16 189.06,256.02 187.53,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.53,256.02 187.53,233.16 189.06,233.16 187.53,256.02"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,277.14 78.72,277.14 78.72,304.56 77.97,277.14"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,304.56 77.97,277.14 78.72,304.56 77.97,304.56"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,304.56 78.72,304.56 78.72,304.56 77.97,304.56"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,304.56 77.97,304.56 78.72,304.56 77.97,304.56"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,304.56 78.72,304.56 78.72,302.28 77.97,304.56"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,302.28 77.97,304.56 78.72,302.28 77.97,302.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,302.28 78.72,302.28 78.72,302.28 77.97,302.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,302.28 77.97,302.28 78.72,302.28 77.97,302.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,302.28 78.72,302.28 78.72,279.42 77.97,302.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,279.42 77.97,302.28 78.72,279.42 77.97,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,279.42 78.72,279.42 78.72,279.42 77.97,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,279.42 77.97,279.42 78.72,279.42 77.97,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,279.42 78.72,279.42 78.72,277.14 77.97,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,277.14 77.97,279.42 78.72,277.14 77.97,277.14"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,277.14 78.72,277.14 78.72,277.14 77.97,277.14"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,277.14 77.97,277.14 78.72,277.14 77.97,277.14"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="78.72,279.42 78.72,302.28 78.72,304.56 78.72,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="78.72,277.14 78.72,279.42 78.72,304.56 78.72,277.14"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="78.72,279.42 78.72,277.14 78.72,277.14 78.72,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="78.72,279.42 78.72,277.14 78.72,279.42 78.72,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="78.72,302.28 78.72,302.28 78.72,304.56 78.72,302.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="78.72,304.56 78.72,302.28 78.72,304.56 78.72,304.56"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,304.56 77.97,302.28 77.97,279.42 77.97,304.56"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,304.56 77.97,279.42 77.97,277.14 77.97,304.56"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,277.14 77.97,277.14 77.97,279.42 77.97,277.14"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,279.42 77.97,277.14 77.97,279.42 77.97,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,304.56 77.97,302.28 77.97,302.28 77.97,304.56"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,304.56 77.97,302.28 77.97,304.56 77.97,304.56"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,304.56 74.25,304.56 74.25,304.56 73.5,304.56"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,304.56 73.5,304.56 74.25,304.56 73.5,304.56"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,304.56 74.25,304.56 74.25,302.28 73.5,304.56"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,302.28 73.5,304.56 74.25,302.28 73.5,302.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,302.28 74.25,302.28 74.25,302.28 73.5,302.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,302.28 73.5,302.28 74.25,302.28 73.5,302.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,302.28 74.25,302.28 74.25,279.42 73.5,302.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,279.42 73.5,302.28 74.25,279.42 73.5,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,279.42 74.25,279.42 74.25,279.42 73.5,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,279.42 73.5,279.42 74.25,279.42 73.5,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,279.42 74.25,279.42 74.25,277.14 73.5,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,277.14 73.5,279.42 74.25,277.14 73.5,277.14"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,277.14 74.25,277.14 74.25,277.14 73.5,277.14"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,277.14 73.5,277.14 74.25,277.14 73.5,277.14"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,277.14 74.25,277.14 74.25,304.56 73.5,277.14"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,304.56 73.5,277.14 74.25,304.56 73.5,304.56"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,302.28 74.25,304.56 74.25,279.42 74.25,302.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,279.42 74.25,304.56 74.25,277.14 74.25,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,304.56 74.25,302.28 74.25,304.56 74.25,304.56"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,304.56 74.25,302.28 74.25,302.28 74.25,304.56"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,279.42 74.25,279.42 74.25,277.14 74.25,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,279.42 74.25,277.14 74.25,277.14 74.25,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,279.42 73.5,304.56 73.5,302.28 73.5,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,277.14 73.5,304.56 73.5,279.42 73.5,277.14"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,304.56 73.5,302.28 73.5,304.56 73.5,304.56"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,302.28 73.5,302.28 73.5,304.56 73.5,302.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,277.14 73.5,279.42 73.5,279.42 73.5,277.14"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.5,277.14 73.5,277.14 73.5,279.42 73.5,277.14"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.44,302.28 76.44,302.28 76.44,279.42 76.44,302.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.44,279.42 76.44,302.28 76.44,279.42 76.44,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.44,279.42 76.44,279.42 77.97,279.42 76.44,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,279.42 76.44,279.42 77.97,279.42 77.97,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,279.42 77.97,279.42 77.97,302.28 77.97,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,302.28 77.97,279.42 77.97,302.28 77.97,302.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,302.28 77.97,302.28 76.44,302.28 77.97,302.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.44,302.28 77.97,302.28 76.44,302.28 76.44,302.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.44,279.42 76.44,302.28 77.97,279.42 76.44,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.44,302.28 77.97,302.28 77.97,279.42 76.44,302.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,279.42 76.44,302.28 76.44,279.42 77.97,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.97,279.42 77.97,302.28 76.44,302.28 77.97,279.42"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,522.24 79.8,522.24 79.8,521.49 79.8,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,522.24 79.8,521.49 79.8,521.49 79.8,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.52,522.24 79.8,522.24 79.8,521.49 77.52,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.52,522.24 79.8,521.49 77.52,521.49 77.52,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.52,522.24 77.52,522.24 77.52,521.49 77.52,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.52,522.24 77.52,521.49 77.52,521.49 77.52,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="106.47,522.24 77.52,522.24 77.52,521.49 106.47,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="106.47,522.24 77.52,521.49 106.47,521.49 106.47,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="106.47,522.24 106.47,522.24 106.47,521.49 106.47,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="106.47,522.24 106.47,521.49 106.47,521.49 106.47,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,522.24 106.47,522.24 106.47,521.49 104.19,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,522.24 106.47,521.49 104.19,521.49 104.19,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,522.24 104.19,522.24 104.19,521.49 104.19,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,522.24 104.19,521.49 104.19,521.49 104.19,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,522.24 104.19,522.24 104.19,521.49 79.8,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,522.24 104.19,521.49 79.8,521.49 79.8,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,522.24 79.8,522.24 77.52,522.24 104.19,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="106.47,522.24 104.19,522.24 77.52,522.24 106.47,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.52,522.24 77.52,522.24 79.8,522.24 77.52,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,522.24 77.52,522.24 79.8,522.24 79.8,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="106.47,522.24 104.19,522.24 104.19,522.24 106.47,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="106.47,522.24 104.19,522.24 106.47,522.24 106.47,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.52,521.49 79.8,521.49 104.19,521.49 77.52,521.49"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.52,521.49 104.19,521.49 106.47,521.49 77.52,521.49"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,521.49 77.52,521.49 77.52,521.49 79.8,521.49"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,521.49 77.52,521.49 79.8,521.49 79.8,521.49"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,521.49 104.19,521.49 106.47,521.49 104.19,521.49"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="106.47,521.49 104.19,521.49 106.47,521.49 106.47,521.49"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,535.5 79.8,535.5 79.8,534.75 79.8,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,535.5 79.8,534.75 79.8,534.75 79.8,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.52,535.5 79.8,535.5 79.8,534.75 77.52,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.52,535.5 79.8,534.75 77.52,534.75 77.52,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.52,535.5 77.52,535.5 77.52,534.75 77.52,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.52,535.5 77.52,534.75 77.52,534.75 77.52,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="106.47,535.5 77.52,535.5 77.52,534.75 106.47,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="106.47,535.5 77.52,534.75 106.47,534.75 106.47,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="106.47,535.5 106.47,535.5 106.47,534.75 106.47,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="106.47,535.5 106.47,534.75 106.47,534.75 106.47,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,535.5 106.47,535.5 106.47,534.75 104.19,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,535.5 106.47,534.75 104.19,534.75 104.19,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,535.5 104.19,535.5 104.19,534.75 104.19,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,535.5 104.19,534.75 104.19,534.75 104.19,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,535.5 104.19,535.5 104.19,534.75 79.8,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,535.5 104.19,534.75 79.8,534.75 79.8,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,535.5 79.8,535.5 77.52,535.5 104.19,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="106.47,535.5 104.19,535.5 77.52,535.5 106.47,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.52,535.5 77.52,535.5 79.8,535.5 77.52,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,535.5 77.52,535.5 79.8,535.5 79.8,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="106.47,535.5 104.19,535.5 104.19,535.5 106.47,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="106.47,535.5 104.19,535.5 106.47,535.5 106.47,535.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.52,534.75 79.8,534.75 104.19,534.75 77.52,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="77.52,534.75 104.19,534.75 106.47,534.75 77.52,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,534.75 77.52,534.75 77.52,534.75 79.8,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,534.75 77.52,534.75 79.8,534.75 79.8,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,534.75 104.19,534.75 106.47,534.75 104.19,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="106.47,534.75 104.19,534.75 106.47,534.75 106.47,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="82.86,533.88 82.86,533.88 101.13,533.88 82.86,533.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.13,533.88 82.86,533.88 101.13,533.88 101.13,533.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.13,533.88 101.13,533.88 101.13,534.09 101.13,533.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.13,534.09 101.13,533.88 101.13,534.09 101.13,534.09"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.13,534.09 101.13,534.09 82.86,534.09 101.13,534.09"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="82.86,534.09 101.13,534.09 82.86,534.09 82.86,534.09"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="82.86,534.09 82.86,534.09 82.86,533.88 82.86,534.09"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="82.86,533.88 82.86,534.09 82.86,533.88 82.86,533.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.13,533.88 82.86,533.88 101.13,534.09 101.13,533.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="82.86,533.88 82.86,534.09 101.13,534.09 82.86,533.88"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.13,534.09 82.86,533.88 101.13,533.88 101.13,534.09"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.13,534.09 82.86,534.09 82.86,533.88 101.13,534.09"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,533.22 79.8,534.75 79.8,534.75 79.8,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,533.22 79.8,533.22 79.8,534.75 79.8,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,533.22 79.8,534.75 104.19,534.75 79.8,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,533.22 79.8,533.22 104.19,534.75 104.19,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,533.22 104.19,534.75 104.19,534.75 104.19,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,533.22 104.19,533.22 104.19,534.75 104.19,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,533.22 104.19,534.75 79.8,534.75 104.19,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,533.22 104.19,533.22 79.8,534.75 79.8,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.13,533.22 101.13,534.75 101.13,534.75 101.13,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.13,533.22 101.13,533.22 101.13,534.75 101.13,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.13,533.22 101.13,534.75 82.86,534.75 101.13,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="82.86,533.22 101.13,533.22 82.86,534.75 82.86,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="82.86,533.22 82.86,534.75 82.86,534.75 82.86,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="82.86,533.22 82.86,533.22 82.86,534.75 82.86,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="82.86,533.22 82.86,534.75 101.13,534.75 82.86,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.13,533.22 82.86,533.22 101.13,534.75 101.13,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="82.86,534.75 79.8,534.75 101.13,534.75 82.86,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.13,534.75 79.8,534.75 104.19,534.75 101.13,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,534.75 82.86,534.75 82.86,534.75 79.8,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,534.75 82.86,534.75 79.8,534.75 79.8,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,534.75 82.86,534.75 101.13,534.75 79.8,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,534.75 101.13,534.75 104.19,534.75 79.8,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.13,534.75 104.19,534.75 104.19,534.75 101.13,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.13,534.75 101.13,534.75 104.19,534.75 101.13,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.13,533.22 79.8,533.22 82.86,533.22 101.13,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,533.22 79.8,533.22 101.13,533.22 104.19,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="82.86,533.22 82.86,533.22 79.8,533.22 82.86,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="79.8,533.22 82.86,533.22 79.8,533.22 79.8,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.13,533.22 82.86,533.22 79.8,533.22 101.13,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,533.22 101.13,533.22 79.8,533.22 104.19,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,533.22 104.19,533.22 101.13,533.22 104.19,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="104.19,533.22 101.13,533.22 101.13,533.22 104.19,533.22"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,13.26 185.7,13.26 185.7,14.01 185.7,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,13.26 185.7,14.01 185.7,14.01 185.7,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.98,13.26 185.7,13.26 185.7,14.01 187.98,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.98,13.26 185.7,14.01 187.98,14.01 187.98,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.98,13.26 187.98,13.26 187.98,14.01 187.98,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.98,13.26 187.98,14.01 187.98,14.01 187.98,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="159.03,13.26 187.98,13.26 187.98,14.01 159.03,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="159.03,13.26 187.98,14.01 159.03,14.01 159.03,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="159.03,13.26 159.03,13.26 159.03,14.01 159.03,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="159.03,13.26 159.03,14.01 159.03,14.01 159.03,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,13.26 159.03,13.26 159.03,14.01 161.31,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,13.26 159.03,14.01 161.31,14.01 161.31,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,13.26 161.31,13.26 161.31,14.01 161.31,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,13.26 161.31,14.01 161.31,14.01 161.31,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,13.26 161.31,13.26 161.31,14.01 185.7,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,13.26 161.31,14.01 185.7,14.01 185.7,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,13.26 185.7,13.26 187.98,13.26 161.31,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="159.03,13.26 161.31,13.26 187.98,13.26 159.03,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.98,13.26 187.98,13.26 185.7,13.26 187.98,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,13.26 187.98,13.26 185.7,13.26 185.7,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="159.03,13.26 161.31,13.26 161.31,13.26 159.03,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="159.03,13.26 161.31,13.26 159.03,13.26 159.03,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.98,14.01 185.7,14.01 161.31,14.01 187.98,14.01"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.98,14.01 161.31,14.01 159.03,14.01 187.98,14.01"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,14.01 187.98,14.01 187.98,14.01 185.7,14.01"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,14.01 187.98,14.01 185.7,14.01 185.7,14.01"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,14.01 161.31,14.01 159.03,14.01 161.31,14.01"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="159.03,14.01 161.31,14.01 159.03,14.01 159.03,14.01"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,0.0 185.7,0.0 185.7,0.75 185.7,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,0.0 185.7,0.75 185.7,0.75 185.7,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.98,0.0 185.7,0.0 185.7,0.75 187.98,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.98,0.0 185.7,0.75 187.98,0.75 187.98,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.98,0.0 187.98,0.0 187.98,0.75 187.98,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.98,0.0 187.98,0.75 187.98,0.75 187.98,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="159.03,0.0 187.98,0.0 187.98,0.75 159.03,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="159.03,0.0 187.98,0.75 159.03,0.75 159.03,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="159.03,0.0 159.03,0.0 159.03,0.75 159.03,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="159.03,0.0 159.03,0.75 159.03,0.75 159.03,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,0.0 159.03,0.0 159.03,0.75 161.31,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,0.0 159.03,0.75 161.31,0.75 161.31,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,0.0 161.31,0.0 161.31,0.75 161.31,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,0.0 161.31,0.75 161.31,0.75 161.31,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,0.0 161.31,0.0 161.31,0.75 185.7,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,0.0 161.31,0.75 185.7,0.75 185.7,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,0.0 185.7,0.0 187.98,0.0 161.31,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="159.03,0.0 161.31,0.0 187.98,0.0 159.03,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.98,0.0 187.98,0.0 185.7,0.0 187.98,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,0.0 187.98,0.0 185.7,0.0 185.7,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="159.03,0.0 161.31,0.0 161.31,0.0 159.03,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="159.03,0.0 161.31,0.0 159.03,0.0 159.03,0.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.98,0.75 185.7,0.75 161.31,0.75 187.98,0.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="187.98,0.75 161.31,0.75 159.03,0.75 187.98,0.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,0.75 187.98,0.75 187.98,0.75 185.7,0.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,0.75 187.98,0.75 185.7,0.75 185.7,0.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,0.75 161.31,0.75 159.03,0.75 161.31,0.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="159.03,0.75 161.31,0.75 159.03,0.75 159.03,0.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="182.64,1.62 182.64,1.62 164.37,1.62 182.64,1.62"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.37,1.62 182.64,1.62 164.37,1.62 164.37,1.62"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.37,1.62 164.37,1.62 164.37,1.41 164.37,1.62"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.37,1.41 164.37,1.62 164.37,1.41 164.37,1.41"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.37,1.41 164.37,1.41 182.64,1.41 164.37,1.41"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="182.64,1.41 164.37,1.41 182.64,1.41 182.64,1.41"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="182.64,1.41 182.64,1.41 182.64,1.62 182.64,1.41"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="182.64,1.62 182.64,1.41 182.64,1.62 182.64,1.62"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.37,1.62 182.64,1.62 164.37,1.41 164.37,1.62"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="182.64,1.62 182.64,1.41 164.37,1.41 182.64,1.62"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.37,1.41 182.64,1.62 164.37,1.62 164.37,1.41"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.37,1.41 182.64,1.41 182.64,1.62 164.37,1.41"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,2.28 185.7,0.75 185.7,0.75 185.7,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,2.28 185.7,2.28 185.7,0.75 185.7,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,2.28 185.7,0.75 161.31,0.75 185.7,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,2.28 185.7,2.28 161.31,0.75 161.31,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,2.28 161.31,0.75 161.31,0.75 161.31,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,2.28 161.31,2.28 161.31,0.75 161.31,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,2.28 161.31,0.75 185.7,0.75 161.31,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,2.28 161.31,2.28 185.7,0.75 185.7,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.37,2.28 164.37,0.75 164.37,0.75 164.37,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.37,2.28 164.37,2.28 164.37,0.75 164.37,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.37,2.28 164.37,0.75 182.64,0.75 164.37,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="182.64,2.28 164.37,2.28 182.64,0.75 182.64,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="182.64,2.28 182.64,0.75 182.64,0.75 182.64,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="182.64,2.28 182.64,2.28 182.64,0.75 182.64,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="182.64,2.28 182.64,0.75 164.37,0.75 182.64,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.37,2.28 182.64,2.28 164.37,0.75 164.37,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="182.64,0.75 185.7,0.75 164.37,0.75 182.64,0.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.37,0.75 185.7,0.75 161.31,0.75 164.37,0.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,0.75 182.64,0.75 182.64,0.75 185.7,0.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,0.75 182.64,0.75 185.7,0.75 185.7,0.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,0.75 182.64,0.75 164.37,0.75 185.7,0.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,0.75 164.37,0.75 161.31,0.75 185.7,0.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.37,0.75 161.31,0.75 161.31,0.75 164.37,0.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.37,0.75 164.37,0.75 161.31,0.75 164.37,0.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.37,2.28 185.7,2.28 182.64,2.28 164.37,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,2.28 185.7,2.28 164.37,2.28 161.31,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="182.64,2.28 182.64,2.28 185.7,2.28 182.64,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="185.7,2.28 182.64,2.28 185.7,2.28 185.7,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.37,2.28 182.64,2.28 185.7,2.28 164.37,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,2.28 164.37,2.28 185.7,2.28 161.31,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,2.28 161.31,2.28 164.37,2.28 161.31,2.28"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="161.31,2.28 164.37,2.28 164.37,2.28 161.31,2.28"\>
+</svg>
+</div><div class="parent" level="T/FDN">
+<svg class="svg-one" width="265.5" height="535.5">
+<rect x="0" y="0" width="265.5" height="535.5" fill="#F4F6F6"/>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="264.75,522.24 0.75,522.24 0.75,534.75 264.75,534.75 264.75,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="252.24,0.75 252.24,522.24 264.75,522.24 264.75,0.75 252.24,0.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="0.75,13.26 252.24,13.26 252.24,0.75 0.75,0.75 0.75,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="13.26,522.24 13.26,13.26 0.75,13.26 0.75,522.24 13.26,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="126.21,307.26 252.24,307.26 252.24,294.21 126.21,294.21 126.21,307.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="139.26,228.21 13.26,228.21 13.26,241.29 139.26,241.29 139.26,228.21"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="139.26,294.24 139.26,241.26 126.21,241.26 126.21,294.24 139.26,294.24"\>
+</svg>
+</div><div class="parent" level="Level 2">
+<svg class="svg-one" width="265.5" height="535.5">
+<rect x="0" y="0" width="265.5" height="535.5" fill="#F4F6F6"/>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="124.5,334.77 124.5,522.24 141.0,522.24 141.0,334.77 141.0,331.05 141.0,206.25 141.0,200.73 141.0,13.26 124.5,13.26 124.5,200.73 124.5,204.45 124.5,329.25 124.5,334.77"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="124.5,329.25 75.93,329.25 75.93,334.77 124.5,334.77 124.5,329.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="75.93,204.45 124.5,204.45 124.5,200.73 75.93,200.73 75.93,204.45"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="189.57,331.05 141.0,331.05 141.0,334.77 189.57,334.77 189.57,331.05"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="141.0,206.25 189.57,206.25 189.57,200.73 141.0,200.73 141.0,206.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="37.83,534.75 40.5,534.75 124.5,534.75 264.75,534.75 252.24,522.24 124.5,522.24 40.5,522.24 37.83,522.24 13.26,522.24 0.75,534.75 13.26,534.75 37.83,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="227.67,13.26 252.24,13.26 264.75,0.75 252.24,0.75 227.67,0.75 225.0,0.75 141.0,0.75 0.75,0.75 13.26,13.26 141.0,13.26 225.0,13.26 227.67,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="71.16,347.25 45.24,347.25 13.26,347.25 13.26,350.97 45.24,350.97 71.16,350.97 75.93,350.97 75.93,347.25 71.16,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="220.38,188.25 252.24,188.25 252.24,184.53 220.38,184.53 194.46,184.53 189.57,184.53 189.57,188.25 194.46,188.25 220.38,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="43.29,188.25 69.21,188.25 72.21,188.25 72.21,184.53 69.21,184.53 43.29,184.53 13.26,184.53 13.26,188.25 43.29,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="193.29,350.97 195.09,350.97 221.01,350.97 252.24,350.97 252.24,347.25 221.01,347.25 195.09,347.25 193.29,347.25 193.29,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="72.21,264.57 72.21,347.25 75.93,347.25 75.93,264.57 75.93,238.65 75.93,184.53 72.21,184.53 72.21,238.65 72.21,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="189.57,270.48 189.57,296.4 189.57,350.97 193.29,350.97 193.29,296.4 193.29,270.48 193.29,188.25 189.57,188.25 189.57,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="264.75,159.03 264.75,0.75 252.24,13.26 252.24,159.03 252.24,181.53 252.24,410.67 252.24,435.24 252.24,438.24 252.24,522.24 264.75,534.75 264.75,522.24 264.75,438.24 264.75,435.24 264.75,410.67 264.75,181.53 264.75,159.03"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="0.75,124.83 0.75,353.97 0.75,376.47 0.75,534.75 13.26,522.24 13.26,376.47 13.26,353.97 13.26,124.83 13.26,100.26 13.26,97.26 13.26,13.26 0.75,0.75 0.75,13.26 0.75,97.26 0.75,100.26 0.75,124.83"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="139.29,206.25 139.29,331.05 143.85,331.05 143.85,206.25 139.29,206.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="126.21,329.25 126.21,204.45 121.65,204.45 121.65,329.25 126.21,329.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="76.53,235.65 99.39,235.65 121.65,235.65 121.65,231.93 99.39,231.93 76.53,231.93 75.93,231.93 75.93,235.65 76.53,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="143.85,303.12 166.68,303.12 189.54,303.12 189.57,303.12 189.57,299.4 189.54,299.4 166.68,299.4 143.85,299.4 143.85,303.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="43.68,243.0 43.68,347.25 47.4,347.25 47.4,243.0 43.68,243.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="221.82,292.5 221.82,188.25 218.1,188.25 218.1,292.5 221.82,292.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="238.47,336.93 205.95,336.93 205.95,338.55 238.47,338.55 238.47,336.93"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="207.57,336.93 207.57,302.85 205.95,302.85 205.95,336.93 207.57,336.93"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="207.57,304.47 240.09,304.47 240.09,302.85 207.57,302.85 207.57,304.47"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="238.47,304.47 238.47,338.55 240.09,338.55 240.09,304.47 238.47,304.47"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="57.48,231.03 24.96,231.03 24.96,232.65 57.48,232.65 57.48,231.03"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="26.58,231.03 26.58,196.95 24.96,196.95 24.96,231.03 26.58,231.03"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="26.58,198.57 59.1,198.57 59.1,196.95 26.58,196.95 26.58,198.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="57.48,198.57 57.48,232.65 59.1,232.65 59.1,198.57 57.48,198.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="40.5,534.75 41.07,534.75 123.93,534.75 124.5,534.75 124.5,532.86 124.5,522.24 123.54,522.24 41.46,522.24 40.5,522.24 40.5,532.86 40.5,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,534.75 13.83,534.75 37.26,534.75 37.83,534.75 37.83,532.86 37.83,522.24 36.87,522.24 14.22,522.24 13.26,522.24 13.26,532.86 13.26,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,532.86 13.26,534.75 13.83,534.75 37.26,534.75 37.83,534.75 37.83,532.86 37.83,522.24 36.87,522.24 14.22,522.24 13.26,522.24 13.26,532.86"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="13.26,534.75 13.83,534.75 37.26,534.75 37.83,534.75 37.83,532.86 37.83,522.24 36.87,522.24 14.22,522.24 13.26,522.24 13.26,532.86 13.26,534.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="141.0,2.64 141.0,13.26 141.96,13.26 224.04,13.26 225.0,13.26 225.0,2.64 225.0,0.75 224.43,0.75 141.57,0.75 141.0,0.75 141.0,2.64"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="228.63,13.26 251.28,13.26 252.24,13.26 252.24,2.64 252.24,0.75 251.67,0.75 228.24,0.75 227.67,0.75 227.67,2.64 227.67,13.26 228.63,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="227.67,2.64 227.67,13.26 228.63,13.26 251.28,13.26 252.24,13.26 252.24,2.64 252.24,0.75 251.67,0.75 228.24,0.75 227.67,0.75 227.67,2.64"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="228.63,13.26 251.28,13.26 252.24,13.26 252.24,2.64 252.24,0.75 251.67,0.75 228.24,0.75 227.67,0.75 227.67,2.64 227.67,13.26 228.63,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="2.64,97.26 13.26,97.26 13.26,96.3 13.26,14.22 13.26,13.26 2.64,13.26 0.75,13.26 0.75,13.83 0.75,96.69 0.75,97.26 2.64,97.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="2.64,124.83 13.26,124.83 13.26,123.87 13.26,101.22 13.26,100.26 2.64,100.26 0.75,100.26 0.75,100.83 0.75,124.26 0.75,124.83 2.64,124.83"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="2.64,124.83 13.26,124.83 13.26,123.87 13.26,101.22 13.26,100.26 2.64,100.26 0.75,100.26 0.75,100.83 0.75,124.26 0.75,124.83 2.64,124.83"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.75,100.26 0.75,100.83 0.75,124.26 0.75,124.83 2.64,124.83 13.26,124.83 13.26,123.87 13.26,101.22 13.26,100.26 2.64,100.26 0.75,100.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,522.24 262.86,522.24 264.75,522.24 264.75,521.67 264.75,438.81 264.75,438.24 262.86,438.24 252.24,438.24 252.24,439.2 252.24,521.28 252.24,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,435.24 262.86,435.24 264.75,435.24 264.75,434.67 264.75,411.24 264.75,410.67 262.86,410.67 252.24,410.67 252.24,411.63 252.24,434.28 252.24,435.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,410.67 252.24,411.63 252.24,434.28 252.24,435.24 262.86,435.24 264.75,435.24 264.75,434.67 264.75,411.24 264.75,410.67 262.86,410.67 252.24,410.67"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,435.24 262.86,435.24 264.75,435.24 264.75,434.67 264.75,411.24 264.75,410.67 262.86,410.67 252.24,410.67 252.24,411.63 252.24,434.28 252.24,435.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="252.24,159.03 252.24,159.99 252.24,180.57 252.24,181.53 262.86,181.53 264.75,181.53 264.75,180.96 264.75,159.6 264.75,159.03 262.86,159.03 252.24,159.03"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="0.75,354.54 0.75,375.9 0.75,376.47 2.64,376.47 13.26,376.47 13.26,375.51 13.26,354.93 13.26,353.97 2.64,353.97 0.75,353.97 0.75,354.54"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="42.96,351.72 42.96,350.97 73.44,350.97 42.96,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.44,351.72 42.96,351.72 73.44,350.97 73.44,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.44,351.72 73.44,350.97 73.44,350.97 73.44,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.44,351.72 73.44,351.72 73.44,350.97 73.44,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.44,351.72 73.44,350.97 71.16,350.97 73.44,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.16,351.72 73.44,351.72 71.16,350.97 71.16,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.16,351.72 71.16,350.97 71.16,350.97 71.16,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.16,351.72 71.16,351.72 71.16,350.97 71.16,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.16,351.72 71.16,350.97 45.24,350.97 71.16,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,351.72 71.16,351.72 45.24,350.97 45.24,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,351.72 45.24,350.97 45.24,350.97 45.24,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,351.72 45.24,351.72 45.24,350.97 45.24,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,351.72 45.24,350.97 42.96,350.97 45.24,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="42.96,351.72 45.24,351.72 42.96,350.97 42.96,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="42.96,351.72 42.96,350.97 42.96,350.97 42.96,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="42.96,351.72 42.96,351.72 42.96,350.97 42.96,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,350.97 71.16,350.97 73.44,350.97 45.24,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="42.96,350.97 45.24,350.97 73.44,350.97 42.96,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,350.97 42.96,350.97 42.96,350.97 45.24,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,350.97 42.96,350.97 45.24,350.97 45.24,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.16,350.97 71.16,350.97 73.44,350.97 71.16,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.44,350.97 71.16,350.97 73.44,350.97 73.44,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.44,351.72 71.16,351.72 45.24,351.72 73.44,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.44,351.72 45.24,351.72 42.96,351.72 73.44,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="42.96,351.72 42.96,351.72 45.24,351.72 42.96,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,351.72 42.96,351.72 45.24,351.72 45.24,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.44,351.72 71.16,351.72 71.16,351.72 73.44,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.44,351.72 71.16,351.72 73.44,351.72 73.44,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.44,347.25 73.44,346.5 73.44,346.5 73.44,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.44,347.25 73.44,347.25 73.44,346.5 73.44,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.44,347.25 73.44,346.5 71.16,346.5 73.44,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.16,347.25 73.44,347.25 71.16,346.5 71.16,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.16,347.25 71.16,346.5 71.16,346.5 71.16,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.16,347.25 71.16,347.25 71.16,346.5 71.16,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.16,347.25 71.16,346.5 45.24,346.5 71.16,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,347.25 71.16,347.25 45.24,346.5 45.24,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,347.25 45.24,346.5 45.24,346.5 45.24,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,347.25 45.24,347.25 45.24,346.5 45.24,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,347.25 45.24,346.5 42.96,346.5 45.24,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="42.96,347.25 45.24,347.25 42.96,346.5 42.96,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="42.96,347.25 42.96,346.5 42.96,346.5 42.96,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="42.96,347.25 42.96,347.25 42.96,346.5 42.96,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="42.96,347.25 42.96,346.5 73.44,346.5 42.96,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.44,347.25 42.96,347.25 73.44,346.5 73.44,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.16,346.5 73.44,346.5 45.24,346.5 71.16,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,346.5 73.44,346.5 42.96,346.5 45.24,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.44,346.5 71.16,346.5 73.44,346.5 73.44,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.44,346.5 71.16,346.5 71.16,346.5 73.44,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,346.5 45.24,346.5 42.96,346.5 45.24,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,346.5 42.96,346.5 42.96,346.5 45.24,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,347.25 73.44,347.25 71.16,347.25 45.24,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="42.96,347.25 73.44,347.25 45.24,347.25 42.96,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="73.44,347.25 71.16,347.25 73.44,347.25 73.44,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.16,347.25 71.16,347.25 73.44,347.25 71.16,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="42.96,347.25 45.24,347.25 45.24,347.25 42.96,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="42.96,347.25 42.96,347.25 45.24,347.25 42.96,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.16,349.44 71.16,349.44 71.16,350.97 71.16,349.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.16,350.97 71.16,349.44 71.16,350.97 71.16,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.16,350.97 71.16,350.97 45.24,350.97 71.16,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,350.97 71.16,350.97 45.24,350.97 45.24,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,350.97 45.24,350.97 45.24,349.44 45.24,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,349.44 45.24,350.97 45.24,349.44 45.24,349.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,349.44 45.24,349.44 71.16,349.44 45.24,349.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.16,349.44 45.24,349.44 71.16,349.44 71.16,349.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.16,350.97 71.16,349.44 45.24,350.97 71.16,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.16,349.44 45.24,349.44 45.24,350.97 71.16,349.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,350.97 71.16,349.44 71.16,350.97 45.24,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="45.24,350.97 45.24,349.44 71.16,349.44 45.24,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="222.66,183.78 222.66,184.53 192.18,184.53 222.66,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.18,183.78 222.66,183.78 192.18,184.53 192.18,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.18,183.78 192.18,184.53 192.18,184.53 192.18,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.18,183.78 192.18,183.78 192.18,184.53 192.18,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.18,183.78 192.18,184.53 194.46,184.53 192.18,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.46,183.78 192.18,183.78 194.46,184.53 194.46,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.46,183.78 194.46,184.53 194.46,184.53 194.46,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.46,183.78 194.46,183.78 194.46,184.53 194.46,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.46,183.78 194.46,184.53 220.38,184.53 194.46,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,183.78 194.46,183.78 220.38,184.53 220.38,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,183.78 220.38,184.53 220.38,184.53 220.38,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,183.78 220.38,183.78 220.38,184.53 220.38,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,183.78 220.38,184.53 222.66,184.53 220.38,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="222.66,183.78 220.38,183.78 222.66,184.53 222.66,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="222.66,183.78 222.66,184.53 222.66,184.53 222.66,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="222.66,183.78 222.66,183.78 222.66,184.53 222.66,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,184.53 194.46,184.53 192.18,184.53 220.38,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="222.66,184.53 220.38,184.53 192.18,184.53 222.66,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,184.53 222.66,184.53 222.66,184.53 220.38,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,184.53 222.66,184.53 220.38,184.53 220.38,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.46,184.53 194.46,184.53 192.18,184.53 194.46,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.18,184.53 194.46,184.53 192.18,184.53 192.18,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.18,183.78 194.46,183.78 220.38,183.78 192.18,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.18,183.78 220.38,183.78 222.66,183.78 192.18,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="222.66,183.78 222.66,183.78 220.38,183.78 222.66,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,183.78 222.66,183.78 220.38,183.78 220.38,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.18,183.78 194.46,183.78 194.46,183.78 192.18,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.18,183.78 194.46,183.78 192.18,183.78 192.18,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.18,188.25 192.18,189.0 192.18,189.0 192.18,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.18,188.25 192.18,188.25 192.18,189.0 192.18,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.18,188.25 192.18,189.0 194.46,189.0 192.18,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.46,188.25 192.18,188.25 194.46,189.0 194.46,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.46,188.25 194.46,189.0 194.46,189.0 194.46,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.46,188.25 194.46,188.25 194.46,189.0 194.46,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.46,188.25 194.46,189.0 220.38,189.0 194.46,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,188.25 194.46,188.25 220.38,189.0 220.38,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,188.25 220.38,189.0 220.38,189.0 220.38,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,188.25 220.38,188.25 220.38,189.0 220.38,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,188.25 220.38,189.0 222.66,189.0 220.38,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="222.66,188.25 220.38,188.25 222.66,189.0 222.66,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="222.66,188.25 222.66,189.0 222.66,189.0 222.66,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="222.66,188.25 222.66,188.25 222.66,189.0 222.66,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="222.66,188.25 222.66,189.0 192.18,189.0 222.66,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.18,188.25 222.66,188.25 192.18,189.0 192.18,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.46,189.0 192.18,189.0 220.38,189.0 194.46,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,189.0 192.18,189.0 222.66,189.0 220.38,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.18,189.0 194.46,189.0 192.18,189.0 192.18,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.18,189.0 194.46,189.0 194.46,189.0 192.18,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,189.0 220.38,189.0 222.66,189.0 220.38,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,189.0 222.66,189.0 222.66,189.0 220.38,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,188.25 192.18,188.25 194.46,188.25 220.38,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="222.66,188.25 192.18,188.25 220.38,188.25 222.66,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.18,188.25 194.46,188.25 192.18,188.25 192.18,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.46,188.25 194.46,188.25 192.18,188.25 194.46,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="222.66,188.25 220.38,188.25 220.38,188.25 222.66,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="222.66,188.25 222.66,188.25 220.38,188.25 222.66,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.46,186.06 194.46,186.06 194.46,184.53 194.46,186.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.46,184.53 194.46,186.06 194.46,184.53 194.46,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.46,184.53 194.46,184.53 220.38,184.53 194.46,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,184.53 194.46,184.53 220.38,184.53 220.38,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,184.53 220.38,184.53 220.38,186.06 220.38,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,186.06 220.38,184.53 220.38,186.06 220.38,186.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,186.06 220.38,186.06 194.46,186.06 220.38,186.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.46,186.06 220.38,186.06 194.46,186.06 194.46,186.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.46,184.53 194.46,186.06 220.38,184.53 194.46,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.46,186.06 220.38,186.06 220.38,184.53 194.46,186.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,184.53 194.46,186.06 194.46,184.53 220.38,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="220.38,184.53 220.38,186.06 194.46,186.06 220.38,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="41.01,184.53 41.01,183.78 71.49,183.78 41.01,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.49,184.53 41.01,184.53 71.49,183.78 71.49,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.49,184.53 71.49,183.78 71.49,183.78 71.49,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.49,184.53 71.49,184.53 71.49,183.78 71.49,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.49,184.53 71.49,183.78 69.21,183.78 71.49,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="69.21,184.53 71.49,184.53 69.21,183.78 69.21,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="69.21,184.53 69.21,183.78 69.21,183.78 69.21,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="69.21,184.53 69.21,184.53 69.21,183.78 69.21,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="69.21,184.53 69.21,183.78 43.29,183.78 69.21,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,184.53 69.21,184.53 43.29,183.78 43.29,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,184.53 43.29,183.78 43.29,183.78 43.29,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,184.53 43.29,184.53 43.29,183.78 43.29,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,184.53 43.29,183.78 41.01,183.78 43.29,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="41.01,184.53 43.29,184.53 41.01,183.78 41.01,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="41.01,184.53 41.01,183.78 41.01,183.78 41.01,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="41.01,184.53 41.01,184.53 41.01,183.78 41.01,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,183.78 69.21,183.78 71.49,183.78 43.29,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="41.01,183.78 43.29,183.78 71.49,183.78 41.01,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,183.78 41.01,183.78 41.01,183.78 43.29,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,183.78 41.01,183.78 43.29,183.78 43.29,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="69.21,183.78 69.21,183.78 71.49,183.78 69.21,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.49,183.78 69.21,183.78 71.49,183.78 71.49,183.78"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.49,184.53 69.21,184.53 43.29,184.53 71.49,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.49,184.53 43.29,184.53 41.01,184.53 71.49,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="41.01,184.53 41.01,184.53 43.29,184.53 41.01,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,184.53 41.01,184.53 43.29,184.53 43.29,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.49,184.53 69.21,184.53 69.21,184.53 71.49,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.49,184.53 69.21,184.53 71.49,184.53 71.49,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.49,189.0 71.49,188.25 71.49,188.25 71.49,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.49,189.0 71.49,189.0 71.49,188.25 71.49,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.49,189.0 71.49,188.25 69.21,188.25 71.49,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="69.21,189.0 71.49,189.0 69.21,188.25 69.21,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="69.21,189.0 69.21,188.25 69.21,188.25 69.21,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="69.21,189.0 69.21,189.0 69.21,188.25 69.21,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="69.21,189.0 69.21,188.25 43.29,188.25 69.21,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,189.0 69.21,189.0 43.29,188.25 43.29,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,189.0 43.29,188.25 43.29,188.25 43.29,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,189.0 43.29,189.0 43.29,188.25 43.29,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,189.0 43.29,188.25 41.01,188.25 43.29,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="41.01,189.0 43.29,189.0 41.01,188.25 41.01,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="41.01,189.0 41.01,188.25 41.01,188.25 41.01,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="41.01,189.0 41.01,189.0 41.01,188.25 41.01,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="41.01,189.0 41.01,188.25 71.49,188.25 41.01,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.49,189.0 41.01,189.0 71.49,188.25 71.49,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="69.21,188.25 71.49,188.25 43.29,188.25 69.21,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,188.25 71.49,188.25 41.01,188.25 43.29,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.49,188.25 69.21,188.25 71.49,188.25 71.49,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.49,188.25 69.21,188.25 69.21,188.25 71.49,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,188.25 43.29,188.25 41.01,188.25 43.29,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,188.25 41.01,188.25 41.01,188.25 43.29,188.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,189.0 71.49,189.0 69.21,189.0 43.29,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="41.01,189.0 71.49,189.0 43.29,189.0 41.01,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.49,189.0 69.21,189.0 71.49,189.0 71.49,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="69.21,189.0 69.21,189.0 71.49,189.0 69.21,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="41.01,189.0 43.29,189.0 43.29,189.0 41.01,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="41.01,189.0 41.01,189.0 43.29,189.0 41.01,189.0"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="69.21,186.06 69.21,186.06 43.29,186.06 69.21,186.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,186.06 69.21,186.06 43.29,186.06 43.29,186.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,186.06 43.29,186.06 43.29,184.53 43.29,186.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,184.53 43.29,186.06 43.29,184.53 43.29,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,184.53 43.29,184.53 69.21,184.53 43.29,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="69.21,184.53 43.29,184.53 69.21,184.53 69.21,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="69.21,184.53 69.21,184.53 69.21,186.06 69.21,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="69.21,186.06 69.21,184.53 69.21,186.06 69.21,186.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,186.06 69.21,186.06 43.29,184.53 43.29,186.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="69.21,186.06 69.21,184.53 43.29,184.53 69.21,186.06"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,184.53 69.21,186.06 43.29,186.06 43.29,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="43.29,184.53 69.21,184.53 69.21,186.06 43.29,184.53"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="223.29,350.97 223.29,351.72 192.81,351.72 223.29,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.81,350.97 223.29,350.97 192.81,351.72 192.81,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.81,350.97 192.81,351.72 192.81,351.72 192.81,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.81,350.97 192.81,350.97 192.81,351.72 192.81,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.81,350.97 192.81,351.72 195.09,351.72 192.81,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="195.09,350.97 192.81,350.97 195.09,351.72 195.09,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="195.09,350.97 195.09,351.72 195.09,351.72 195.09,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="195.09,350.97 195.09,350.97 195.09,351.72 195.09,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="195.09,350.97 195.09,351.72 221.01,351.72 195.09,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,350.97 195.09,350.97 221.01,351.72 221.01,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,350.97 221.01,351.72 221.01,351.72 221.01,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,350.97 221.01,350.97 221.01,351.72 221.01,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,350.97 221.01,351.72 223.29,351.72 221.01,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="223.29,350.97 221.01,350.97 223.29,351.72 223.29,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="223.29,350.97 223.29,351.72 223.29,351.72 223.29,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="223.29,350.97 223.29,350.97 223.29,351.72 223.29,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,351.72 195.09,351.72 192.81,351.72 221.01,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="223.29,351.72 221.01,351.72 192.81,351.72 223.29,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,351.72 223.29,351.72 223.29,351.72 221.01,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,351.72 223.29,351.72 221.01,351.72 221.01,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="195.09,351.72 195.09,351.72 192.81,351.72 195.09,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.81,351.72 195.09,351.72 192.81,351.72 192.81,351.72"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.81,350.97 195.09,350.97 221.01,350.97 192.81,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.81,350.97 221.01,350.97 223.29,350.97 192.81,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="223.29,350.97 223.29,350.97 221.01,350.97 223.29,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,350.97 223.29,350.97 221.01,350.97 221.01,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.81,350.97 195.09,350.97 195.09,350.97 192.81,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.81,350.97 195.09,350.97 192.81,350.97 192.81,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.81,346.5 192.81,347.25 192.81,347.25 192.81,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.81,346.5 192.81,346.5 192.81,347.25 192.81,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.81,346.5 192.81,347.25 195.09,347.25 192.81,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="195.09,346.5 192.81,346.5 195.09,347.25 195.09,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="195.09,346.5 195.09,347.25 195.09,347.25 195.09,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="195.09,346.5 195.09,346.5 195.09,347.25 195.09,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="195.09,346.5 195.09,347.25 221.01,347.25 195.09,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,346.5 195.09,346.5 221.01,347.25 221.01,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,346.5 221.01,347.25 221.01,347.25 221.01,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,346.5 221.01,346.5 221.01,347.25 221.01,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,346.5 221.01,347.25 223.29,347.25 221.01,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="223.29,346.5 221.01,346.5 223.29,347.25 223.29,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="223.29,346.5 223.29,347.25 223.29,347.25 223.29,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="223.29,346.5 223.29,346.5 223.29,347.25 223.29,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="223.29,346.5 223.29,347.25 192.81,347.25 223.29,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.81,346.5 223.29,346.5 192.81,347.25 192.81,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="195.09,347.25 192.81,347.25 221.01,347.25 195.09,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,347.25 192.81,347.25 223.29,347.25 221.01,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.81,347.25 195.09,347.25 192.81,347.25 192.81,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.81,347.25 195.09,347.25 195.09,347.25 192.81,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,347.25 221.01,347.25 223.29,347.25 221.01,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,347.25 223.29,347.25 223.29,347.25 221.01,347.25"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,346.5 192.81,346.5 195.09,346.5 221.01,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="223.29,346.5 192.81,346.5 221.01,346.5 223.29,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="192.81,346.5 195.09,346.5 192.81,346.5 192.81,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="195.09,346.5 195.09,346.5 192.81,346.5 195.09,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="223.29,346.5 221.01,346.5 221.01,346.5 223.29,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="223.29,346.5 223.29,346.5 221.01,346.5 223.29,346.5"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="195.09,349.44 195.09,349.44 221.01,349.44 195.09,349.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,349.44 195.09,349.44 221.01,349.44 221.01,349.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,349.44 221.01,349.44 221.01,350.97 221.01,349.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,350.97 221.01,349.44 221.01,350.97 221.01,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,350.97 221.01,350.97 195.09,350.97 221.01,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="195.09,350.97 221.01,350.97 195.09,350.97 195.09,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="195.09,350.97 195.09,350.97 195.09,349.44 195.09,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="195.09,349.44 195.09,350.97 195.09,349.44 195.09,349.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,349.44 195.09,349.44 221.01,350.97 221.01,349.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="195.09,349.44 195.09,350.97 221.01,350.97 195.09,349.44"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,350.97 195.09,349.44 221.01,349.44 221.01,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="221.01,350.97 195.09,350.97 195.09,349.44 221.01,350.97"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,266.85 75.93,266.85 75.93,236.37 76.68,266.85"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,236.37 76.68,266.85 75.93,236.37 76.68,236.37"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,236.37 75.93,236.37 75.93,236.37 76.68,236.37"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,236.37 76.68,236.37 75.93,236.37 76.68,236.37"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,236.37 75.93,236.37 75.93,238.65 76.68,236.37"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,238.65 76.68,236.37 75.93,238.65 76.68,238.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,238.65 75.93,238.65 75.93,238.65 76.68,238.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,238.65 76.68,238.65 75.93,238.65 76.68,238.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,238.65 75.93,238.65 75.93,264.57 76.68,238.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,264.57 76.68,238.65 75.93,264.57 76.68,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,264.57 75.93,264.57 75.93,264.57 76.68,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,264.57 76.68,264.57 75.93,264.57 76.68,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,264.57 75.93,264.57 75.93,266.85 76.68,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,266.85 76.68,264.57 75.93,266.85 76.68,266.85"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,266.85 75.93,266.85 75.93,266.85 76.68,266.85"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,266.85 76.68,266.85 75.93,266.85 76.68,266.85"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="75.93,264.57 75.93,238.65 75.93,236.37 75.93,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="75.93,266.85 75.93,264.57 75.93,236.37 75.93,266.85"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="75.93,264.57 75.93,266.85 75.93,266.85 75.93,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="75.93,264.57 75.93,266.85 75.93,264.57 75.93,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="75.93,238.65 75.93,238.65 75.93,236.37 75.93,238.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="75.93,236.37 75.93,238.65 75.93,236.37 75.93,236.37"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,236.37 76.68,238.65 76.68,264.57 76.68,236.37"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,236.37 76.68,264.57 76.68,266.85 76.68,236.37"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,266.85 76.68,266.85 76.68,264.57 76.68,266.85"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,264.57 76.68,266.85 76.68,264.57 76.68,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,236.37 76.68,238.65 76.68,238.65 76.68,236.37"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.68,236.37 76.68,238.65 76.68,236.37 76.68,236.37"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,236.37 71.46,236.37 71.46,236.37 72.21,236.37"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,236.37 72.21,236.37 71.46,236.37 72.21,236.37"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,236.37 71.46,236.37 71.46,238.65 72.21,236.37"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,238.65 72.21,236.37 71.46,238.65 72.21,238.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,238.65 71.46,238.65 71.46,238.65 72.21,238.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,238.65 72.21,238.65 71.46,238.65 72.21,238.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,238.65 71.46,238.65 71.46,264.57 72.21,238.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,264.57 72.21,238.65 71.46,264.57 72.21,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,264.57 71.46,264.57 71.46,264.57 72.21,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,264.57 72.21,264.57 71.46,264.57 72.21,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,264.57 71.46,264.57 71.46,266.85 72.21,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,266.85 72.21,264.57 71.46,266.85 72.21,266.85"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,266.85 71.46,266.85 71.46,266.85 72.21,266.85"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,266.85 72.21,266.85 71.46,266.85 72.21,266.85"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,266.85 71.46,266.85 71.46,236.37 72.21,266.85"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,236.37 72.21,266.85 71.46,236.37 72.21,236.37"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.46,238.65 71.46,236.37 71.46,264.57 71.46,238.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.46,264.57 71.46,236.37 71.46,266.85 71.46,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.46,236.37 71.46,238.65 71.46,236.37 71.46,236.37"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.46,236.37 71.46,238.65 71.46,238.65 71.46,236.37"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.46,264.57 71.46,264.57 71.46,266.85 71.46,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="71.46,264.57 71.46,266.85 71.46,266.85 71.46,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,264.57 72.21,236.37 72.21,238.65 72.21,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,266.85 72.21,236.37 72.21,264.57 72.21,266.85"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,236.37 72.21,238.65 72.21,236.37 72.21,236.37"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,238.65 72.21,238.65 72.21,236.37 72.21,238.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,266.85 72.21,264.57 72.21,264.57 72.21,266.85"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="72.21,266.85 72.21,266.85 72.21,264.57 72.21,266.85"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.4,238.65 74.4,238.65 75.93,238.65 74.4,238.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="75.93,238.65 74.4,238.65 75.93,238.65 75.93,238.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="75.93,238.65 75.93,238.65 75.93,264.57 75.93,238.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="75.93,264.57 75.93,238.65 75.93,264.57 75.93,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="75.93,264.57 75.93,264.57 74.4,264.57 75.93,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.4,264.57 75.93,264.57 74.4,264.57 74.4,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.4,264.57 74.4,264.57 74.4,238.65 74.4,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.4,238.65 74.4,264.57 74.4,238.65 74.4,238.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="75.93,238.65 74.4,238.65 75.93,264.57 75.93,238.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.4,238.65 74.4,264.57 75.93,264.57 74.4,238.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="75.93,264.57 74.4,238.65 75.93,238.65 75.93,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="75.93,264.57 74.4,264.57 74.4,238.65 75.93,264.57"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,268.2 189.57,268.2 189.57,298.68 188.82,268.2"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,298.68 188.82,268.2 189.57,298.68 188.82,298.68"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,298.68 189.57,298.68 189.57,298.68 188.82,298.68"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,298.68 188.82,298.68 189.57,298.68 188.82,298.68"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,298.68 189.57,298.68 189.57,296.4 188.82,298.68"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,296.4 188.82,298.68 189.57,296.4 188.82,296.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,296.4 189.57,296.4 189.57,296.4 188.82,296.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,296.4 188.82,296.4 189.57,296.4 188.82,296.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,296.4 189.57,296.4 189.57,270.48 188.82,296.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,270.48 188.82,296.4 189.57,270.48 188.82,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,270.48 189.57,270.48 189.57,270.48 188.82,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,270.48 188.82,270.48 189.57,270.48 188.82,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,270.48 189.57,270.48 189.57,268.2 188.82,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,268.2 188.82,270.48 189.57,268.2 188.82,268.2"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,268.2 189.57,268.2 189.57,268.2 188.82,268.2"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,268.2 188.82,268.2 189.57,268.2 188.82,268.2"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.57,270.48 189.57,296.4 189.57,298.68 189.57,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.57,268.2 189.57,270.48 189.57,298.68 189.57,268.2"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.57,270.48 189.57,268.2 189.57,268.2 189.57,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.57,270.48 189.57,268.2 189.57,270.48 189.57,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.57,296.4 189.57,296.4 189.57,298.68 189.57,296.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.57,298.68 189.57,296.4 189.57,298.68 189.57,298.68"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,298.68 188.82,296.4 188.82,270.48 188.82,298.68"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,298.68 188.82,270.48 188.82,268.2 188.82,298.68"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,268.2 188.82,268.2 188.82,270.48 188.82,268.2"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,270.48 188.82,268.2 188.82,270.48 188.82,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,298.68 188.82,296.4 188.82,296.4 188.82,298.68"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="188.82,298.68 188.82,296.4 188.82,298.68 188.82,298.68"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,298.68 194.04,298.68 194.04,298.68 193.29,298.68"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,298.68 193.29,298.68 194.04,298.68 193.29,298.68"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,298.68 194.04,298.68 194.04,296.4 193.29,298.68"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,296.4 193.29,298.68 194.04,296.4 193.29,296.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,296.4 194.04,296.4 194.04,296.4 193.29,296.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,296.4 193.29,296.4 194.04,296.4 193.29,296.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,296.4 194.04,296.4 194.04,270.48 193.29,296.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,270.48 193.29,296.4 194.04,270.48 193.29,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,270.48 194.04,270.48 194.04,270.48 193.29,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,270.48 193.29,270.48 194.04,270.48 193.29,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,270.48 194.04,270.48 194.04,268.2 193.29,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,268.2 193.29,270.48 194.04,268.2 193.29,268.2"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,268.2 194.04,268.2 194.04,268.2 193.29,268.2"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,268.2 193.29,268.2 194.04,268.2 193.29,268.2"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,268.2 194.04,268.2 194.04,298.68 193.29,268.2"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,298.68 193.29,268.2 194.04,298.68 193.29,298.68"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.04,296.4 194.04,298.68 194.04,270.48 194.04,296.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.04,270.48 194.04,298.68 194.04,268.2 194.04,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.04,298.68 194.04,296.4 194.04,298.68 194.04,298.68"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.04,298.68 194.04,296.4 194.04,296.4 194.04,298.68"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.04,270.48 194.04,270.48 194.04,268.2 194.04,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="194.04,270.48 194.04,268.2 194.04,268.2 194.04,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,270.48 193.29,298.68 193.29,296.4 193.29,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,268.2 193.29,298.68 193.29,270.48 193.29,268.2"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,298.68 193.29,296.4 193.29,298.68 193.29,298.68"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,296.4 193.29,296.4 193.29,298.68 193.29,296.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,268.2 193.29,270.48 193.29,270.48 193.29,268.2"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="193.29,268.2 193.29,268.2 193.29,270.48 193.29,268.2"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.1,296.4 191.1,296.4 189.57,296.4 191.1,296.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.57,296.4 191.1,296.4 189.57,296.4 189.57,296.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.57,296.4 189.57,296.4 189.57,270.48 189.57,296.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.57,270.48 189.57,296.4 189.57,270.48 189.57,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.57,270.48 189.57,270.48 191.1,270.48 189.57,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.1,270.48 189.57,270.48 191.1,270.48 191.1,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.1,270.48 191.1,270.48 191.1,296.4 191.1,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.1,296.4 191.1,270.48 191.1,296.4 191.1,296.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.57,296.4 191.1,296.4 189.57,270.48 189.57,296.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.1,296.4 191.1,270.48 189.57,270.48 191.1,296.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.57,270.48 191.1,296.4 189.57,296.4 189.57,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.57,270.48 191.1,270.48 191.1,296.4 189.57,270.48"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.67,231.18 101.67,231.93 74.25,231.93 101.67,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,231.18 101.67,231.18 74.25,231.93 74.25,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,231.18 74.25,231.93 74.25,231.93 74.25,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,231.18 74.25,231.18 74.25,231.93 74.25,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,231.18 74.25,231.93 76.53,231.93 74.25,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.53,231.18 74.25,231.18 76.53,231.93 76.53,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.53,231.18 76.53,231.93 76.53,231.93 76.53,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.53,231.18 76.53,231.18 76.53,231.93 76.53,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.53,231.18 76.53,231.93 99.39,231.93 76.53,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,231.18 76.53,231.18 99.39,231.93 99.39,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,231.18 99.39,231.93 99.39,231.93 99.39,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,231.18 99.39,231.18 99.39,231.93 99.39,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,231.18 99.39,231.93 101.67,231.93 99.39,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.67,231.18 99.39,231.18 101.67,231.93 101.67,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.67,231.18 101.67,231.93 101.67,231.93 101.67,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.67,231.18 101.67,231.18 101.67,231.93 101.67,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,231.93 76.53,231.93 74.25,231.93 99.39,231.93"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.67,231.93 99.39,231.93 74.25,231.93 101.67,231.93"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,231.93 101.67,231.93 101.67,231.93 99.39,231.93"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,231.93 101.67,231.93 99.39,231.93 99.39,231.93"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.53,231.93 76.53,231.93 74.25,231.93 76.53,231.93"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,231.93 76.53,231.93 74.25,231.93 74.25,231.93"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,231.18 76.53,231.18 99.39,231.18 74.25,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,231.18 99.39,231.18 101.67,231.18 74.25,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.67,231.18 101.67,231.18 99.39,231.18 101.67,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,231.18 101.67,231.18 99.39,231.18 99.39,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,231.18 76.53,231.18 76.53,231.18 74.25,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,231.18 76.53,231.18 74.25,231.18 74.25,231.18"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,235.65 74.25,236.4 74.25,236.4 74.25,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,235.65 74.25,235.65 74.25,236.4 74.25,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,235.65 74.25,236.4 76.53,236.4 74.25,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.53,235.65 74.25,235.65 76.53,236.4 76.53,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.53,235.65 76.53,236.4 76.53,236.4 76.53,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.53,235.65 76.53,235.65 76.53,236.4 76.53,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.53,235.65 76.53,236.4 99.39,236.4 76.53,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,235.65 76.53,235.65 99.39,236.4 99.39,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,235.65 99.39,236.4 99.39,236.4 99.39,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,235.65 99.39,235.65 99.39,236.4 99.39,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,235.65 99.39,236.4 101.67,236.4 99.39,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.67,235.65 99.39,235.65 101.67,236.4 101.67,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.67,235.65 101.67,236.4 101.67,236.4 101.67,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.67,235.65 101.67,235.65 101.67,236.4 101.67,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.67,235.65 101.67,236.4 74.25,236.4 101.67,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,235.65 101.67,235.65 74.25,236.4 74.25,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.53,236.4 74.25,236.4 99.39,236.4 76.53,236.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,236.4 74.25,236.4 101.67,236.4 99.39,236.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,236.4 76.53,236.4 74.25,236.4 74.25,236.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,236.4 76.53,236.4 76.53,236.4 74.25,236.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,236.4 99.39,236.4 101.67,236.4 99.39,236.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,236.4 101.67,236.4 101.67,236.4 99.39,236.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,235.65 74.25,235.65 76.53,235.65 99.39,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.67,235.65 74.25,235.65 99.39,235.65 101.67,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="74.25,235.65 76.53,235.65 74.25,235.65 74.25,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.53,235.65 76.53,235.65 74.25,235.65 76.53,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.67,235.65 99.39,235.65 99.39,235.65 101.67,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="101.67,235.65 101.67,235.65 99.39,235.65 101.67,235.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.53,233.46 76.53,233.46 76.53,231.93 76.53,233.46"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.53,231.93 76.53,233.46 76.53,231.93 76.53,231.93"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.53,231.93 76.53,231.93 99.39,231.93 76.53,231.93"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,231.93 76.53,231.93 99.39,231.93 99.39,231.93"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,231.93 99.39,231.93 99.39,233.46 99.39,231.93"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,233.46 99.39,231.93 99.39,233.46 99.39,233.46"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,233.46 99.39,233.46 76.53,233.46 99.39,233.46"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.53,233.46 99.39,233.46 76.53,233.46 76.53,233.46"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.53,231.93 76.53,233.46 99.39,231.93 76.53,231.93"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="76.53,233.46 99.39,233.46 99.39,231.93 76.53,233.46"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,231.93 76.53,233.46 76.53,231.93 99.39,231.93"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="99.39,231.93 99.39,233.46 76.53,233.46 99.39,231.93"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.4,303.87 164.4,303.12 191.82,303.12 164.4,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.82,303.87 164.4,303.87 191.82,303.12 191.82,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.82,303.87 191.82,303.12 191.82,303.12 191.82,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.82,303.87 191.82,303.87 191.82,303.12 191.82,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.82,303.87 191.82,303.12 189.54,303.12 191.82,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.54,303.87 191.82,303.87 189.54,303.12 189.54,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.54,303.87 189.54,303.12 189.54,303.12 189.54,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.54,303.87 189.54,303.87 189.54,303.12 189.54,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.54,303.87 189.54,303.12 166.68,303.12 189.54,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,303.87 189.54,303.87 166.68,303.12 166.68,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,303.87 166.68,303.12 166.68,303.12 166.68,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,303.87 166.68,303.87 166.68,303.12 166.68,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,303.87 166.68,303.12 164.4,303.12 166.68,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.4,303.87 166.68,303.87 164.4,303.12 164.4,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.4,303.87 164.4,303.12 164.4,303.12 164.4,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.4,303.87 164.4,303.87 164.4,303.12 164.4,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,303.12 189.54,303.12 191.82,303.12 166.68,303.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.4,303.12 166.68,303.12 191.82,303.12 164.4,303.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,303.12 164.4,303.12 164.4,303.12 166.68,303.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,303.12 164.4,303.12 166.68,303.12 166.68,303.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.54,303.12 189.54,303.12 191.82,303.12 189.54,303.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.82,303.12 189.54,303.12 191.82,303.12 191.82,303.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.82,303.87 189.54,303.87 166.68,303.87 191.82,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.82,303.87 166.68,303.87 164.4,303.87 191.82,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.4,303.87 164.4,303.87 166.68,303.87 164.4,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,303.87 164.4,303.87 166.68,303.87 166.68,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.82,303.87 189.54,303.87 189.54,303.87 191.82,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.82,303.87 189.54,303.87 191.82,303.87 191.82,303.87"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.82,299.4 191.82,298.65 191.82,298.65 191.82,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.82,299.4 191.82,299.4 191.82,298.65 191.82,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.82,299.4 191.82,298.65 189.54,298.65 191.82,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.54,299.4 191.82,299.4 189.54,298.65 189.54,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.54,299.4 189.54,298.65 189.54,298.65 189.54,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.54,299.4 189.54,299.4 189.54,298.65 189.54,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.54,299.4 189.54,298.65 166.68,298.65 189.54,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,299.4 189.54,299.4 166.68,298.65 166.68,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,299.4 166.68,298.65 166.68,298.65 166.68,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,299.4 166.68,299.4 166.68,298.65 166.68,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,299.4 166.68,298.65 164.4,298.65 166.68,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.4,299.4 166.68,299.4 164.4,298.65 164.4,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.4,299.4 164.4,298.65 164.4,298.65 164.4,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.4,299.4 164.4,299.4 164.4,298.65 164.4,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.4,299.4 164.4,298.65 191.82,298.65 164.4,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.82,299.4 164.4,299.4 191.82,298.65 191.82,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.54,298.65 191.82,298.65 166.68,298.65 189.54,298.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,298.65 191.82,298.65 164.4,298.65 166.68,298.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.82,298.65 189.54,298.65 191.82,298.65 191.82,298.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.82,298.65 189.54,298.65 189.54,298.65 191.82,298.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,298.65 166.68,298.65 164.4,298.65 166.68,298.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,298.65 164.4,298.65 164.4,298.65 166.68,298.65"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,299.4 191.82,299.4 189.54,299.4 166.68,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.4,299.4 191.82,299.4 166.68,299.4 164.4,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="191.82,299.4 189.54,299.4 191.82,299.4 191.82,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.54,299.4 189.54,299.4 191.82,299.4 189.54,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.4,299.4 166.68,299.4 166.68,299.4 164.4,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="164.4,299.4 164.4,299.4 166.68,299.4 164.4,299.4"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.54,301.59 189.54,301.59 189.54,303.12 189.54,301.59"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.54,303.12 189.54,301.59 189.54,303.12 189.54,303.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.54,303.12 189.54,303.12 166.68,303.12 189.54,303.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,303.12 189.54,303.12 166.68,303.12 166.68,303.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,303.12 166.68,303.12 166.68,301.59 166.68,303.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,301.59 166.68,303.12 166.68,301.59 166.68,301.59"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,301.59 166.68,301.59 189.54,301.59 166.68,301.59"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.54,301.59 166.68,301.59 189.54,301.59 189.54,301.59"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.54,303.12 189.54,301.59 166.68,303.12 189.54,303.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="189.54,301.59 166.68,301.59 166.68,303.12 189.54,301.59"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,303.12 189.54,301.59 189.54,303.12 166.68,303.12"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="166.68,303.12 166.68,301.59 189.54,301.59 166.68,303.12"\>
+</svg>
+</div><div class="parent" level="Roof">
+<svg class="svg-one" width="265.5" height="535.5">
+<rect x="0" y="0" width="265.5" height="535.5" fill="#F4F6F6"/>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="264.75,522.24 0.75,522.24 0.75,534.75 264.75,534.75 264.75,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="252.24,0.75 252.24,522.24 264.75,522.24 264.75,0.75 252.24,0.75"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="0.75,13.26 252.24,13.26 252.24,0.75 0.75,0.75 0.75,13.26"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="black">
+<polygon points="13.26,522.24 13.26,13.26 0.75,13.26 0.75,522.24 13.26,522.24"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="59.61,233.16 59.61,196.44 24.45,196.44 24.45,233.16 59.61,233.16"\>
+</svg>
+<svg class="primary" width="265.5" height="535.5" fill="darkgrey">
+<polygon points="205.44,339.06 240.6,339.06 240.6,302.34 205.44,302.34 205.44,339.06"\>
+</svg>
+</div></floor_plan->
+<p id = "info"></p>
+</view->
+	</body>
+</html>
