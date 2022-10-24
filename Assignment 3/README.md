@@ -7,7 +7,8 @@ The main goal of the tool is to contribute to the automation in construction ind
 
 
 ## Propose a (design for a) tool/workflow
-### BPMN Worflow (Image)
+### BPMN Workflow
+<img src=" img/proposed_use_case.svg ">
 ### Detailed Description of the Workflow
 
 ## Information Exchange 
