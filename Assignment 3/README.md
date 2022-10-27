@@ -25,8 +25,9 @@ The tool is programmed to extract relevant data of structural elements from a gi
   b) Acceptable Carbon Emissions data from BR18 and structural code conformance from EN
 3. Assumptions:
   a) All structural elements of the building are assumed to fall in the Ifc elements categories  listed in the section above. 
-  b) The acceptable cost/budget is assumed until a real value is not provided
-  c) Any Assumptions about LOAD DATA??
+  b) The acceptable cost/budget is assumed until a real value is not provided.
+  c) The load data is purely based on the weight of the structure using newtons second law.
+  d) Composit details in i.e. slabs with concrete and reinforcement is simplified, to a degree where the entire slab is assumed to be concrete.
 
 ### 4 Value/Business Need of the Tool
 #### 4.1 Business Value: 
