@@ -1,6 +1,6 @@
 # Assignment 3
-### 1 Analyze the Usecase
-#### 1.1 Goal
+### **1 Analyze the Usecase**
+#### 1.1 **Goal**
 To allow for automated cost estimation and determination of Carbon emissions of the structural elements of any given IFC model.  
 
 #### 1.2 Model Use
@@ -22,9 +22,11 @@ The tool is programmed to extract relevant data of structural elements from a gi
   b) Properties: Material properties (), Dimensions ()
 2. Data from external sources
   a) Cost and Carbon Emissions data from BR18
+  b) Acceptable Carbon Emissions data from BR18 and structural code conformance from EN
 3. Assumptions:
   a) All structural elements of the building are assumed to fall in the Ifc elements categories  listed in the section above. 
-  b) ANY ASSUMPTIONS ABOUT LOAD DATA??
+  b) The acceptable cost/budget is assumed until a real value is not provided
+  c) Any Assumptions about LOAD DATA??
 
 ### 4 Value/Business Need of the Tool
 #### 4.1 Business Value: The use case can be of value to both expertise interested in the cost of the building as well as expertise who needs information of the self weight of the structure, the tool makes it easier to get an overview of these parameters over several iterations of the BIM model.
