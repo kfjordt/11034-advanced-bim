@@ -1,6 +1,6 @@
 # Assignment 3
-### **1 Analyze the Usecase**
-#### 1.1 **Goal**
+### 1 Analyze the Usecase
+#### 1.1 Goal
 To allow for automated cost estimation and determination of Carbon emissions of the structural elements of any given IFC model.  
 
 #### 1.2 Model Use
@@ -29,12 +29,15 @@ The tool is programmed to extract relevant data of structural elements from a gi
   c) Any Assumptions about LOAD DATA??
 
 ### 4 Value/Business Need of the Tool
-#### 4.1 Business Value: The use case can be of value to both expertise interested in the cost of the building as well as expertise who needs information of the self weight of the structure, the tool makes it easier to get an overview of these parameters over several iterations of the BIM model.
+#### 4.1 Business Value: The tool primarily functions as a time and cost saving tool and helps in the decision making process; for instance: in the case where the structure is not conforming to the acceptable levels of carbon emissions, the structural designer can easily evaluate which element has the most significant contribution to the carbon emissions and run a new design iteration by changing that structural element with an alternative one. The same analogy can be applied if the structure isn't conforming to set budgets. 
 
-#### 4.2 Societal Value: 
+#### 4.2 Societal Value: This tool could potential help companies design structures with enhanced sustainability levels. For example, if the preliminary structure is well below specified budget, the designer can design the structure with elements having least carbon equivalence values. Hence, a simplified approach can be adopted to designing the most sustainable building while also checking whether it remains within acceptable budget or not? 
 
-## Delivery 
-### Our tool as a solution for our Usecase
-### Methodology for creating the Tool
+### 5 Delivery 
+#### 5.1 Solving the Usecase: The usecase will be solved by simply having an IFC model. The analysis process itself is a completely automated process. The tool will extract required data from the loaded model and run calculations, while also checking conformance with acceptable limits.
+
+#### 5.2 Methodology for creating the Tool: The tool was/is being created in stages and modified as each stage is completed. Initially, the tool was only used to call structural elements from a given IFC model. The next few iterations involved extracting dimensional and material data from the tool and computing volume data.
+
+The next stage of script modification will try to incorporate a library/database for cost and carbon emissions data, and also allow for computation of LCA from volume data. The final stage will try to include validation/conformance checks specified in the BPMN process flow diagram.
 
 
