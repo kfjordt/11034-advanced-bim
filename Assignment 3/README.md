@@ -16,6 +16,7 @@ The tool is programmed to extract relevant data of structural elements from a gi
 
 ### 3 Information Exchange 
 #### 3.1 Excel File 
+The excel file containing infomation regarding the components and the LOD is attached in this 'Assignment 3' folder.
 #### 3.2 Description of Input Data 
 1. IFC Data:
   a) Elements: The following IFC elements are relevant to our case: *IfcBeam, IfcSlab, IfcWall, IfcColumn, IfcFoundation*
