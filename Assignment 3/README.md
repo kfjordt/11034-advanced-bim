@@ -1,7 +1,7 @@
 # Assignment 3
 ### 1 Analyze the Usecase
 #### 1.1 Goal
-To allow for automated load calculation as well as cost estimation and thereby determination of Carbon emissions of the structural elements of any given IFC model.  
+To allow for automated load calculation as well as cost estimation based on a given volume and thereby determination of Carbon emissions of the structural elements of any given IFC model.  
 
 #### 1.2 Model Use
 The use case is 'structural' with a focus on cost estimation and LCA of the structural elements, whereas the BIM use is within the category 'Analyse (forecast)'. The tool is primarily an aid for the Structural Engineers, where the designer has the flexibility to choose from a number of structural layout systems and check the conformance of these systems with respect to load, cost and carbon emissions associated witht the chosen elements. This makes the structural design a proactive iterative process, and enhances decision making for Structural Engineers.
