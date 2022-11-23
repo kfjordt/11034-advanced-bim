@@ -1,6 +1,9 @@
 # Group 01 
 ### Use case: Construction / Cost
 #### Primary instructions
+The Python modules `shapely` and `ifcopenshell` are used to parse the IFC model. *Node.js* also needs to be installed. When in the root directory, run 
+`npm install express`.
+
 To start the tool, run the Python-script `main.py`. This will parse the IFC model found in the subfolder "model". If more than one model is present in the folder, the first model, ordered alphabetically, will be parsed.
 
 This will export a JSON file `data.json` and mulitple .svg-files (one pr. floor) to the folder "output". When this file is succesfully saved, `node server.js` may be run in the command line, after which the main GUI can be accessed at `http://localhost:3000`.
@@ -13,6 +16,7 @@ The IFC data itself is still static. The plan was to establish a connection to a
 
 
 #### Current BPMN chart
-
+<img src=" diagrams/current.svg ">
 
 #### Proposed BPMN chart
+<img src=" diagrams/proposed.svg ">
