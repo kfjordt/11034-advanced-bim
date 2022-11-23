@@ -1,0 +1,1674 @@
+{
+    "building": {
+        "project_name": "Duplex Apartment",
+        "address": "Chicago, IL",
+        "elevation": 0,
+        "latitude": [
+            41,
+            52,
+            27,
+            840000
+        ],
+        "longitude": [
+            -87,
+            -38,
+            -21,
+            -839999
+        ],
+        "unique_materials": [
+            "Wood - Sheathing - plywood",
+            "Insulation / Thermal Barriers - Rigid insulation",
+            "Misc. Air Layers - Air Space",
+            "Metal - Stud Layer",
+            "Masonry - Brick",
+            "Wood - Dimensional Lumber",
+            "Insulation / Thermal Barriers - Semi-rigid insulation",
+            "Ceramic Tile",
+            "Masonry - Grout",
+            "Concrete",
+            "Wood - Flooring",
+            "Plasterboard",
+            "Masonry - Concrete Block",
+            "Concrete - Cast In Situ"
+        ],
+        "ifc_floors": {
+            "T/FDN": {
+                "height": 1.25,
+                "floor_type": "Basement"
+            },
+            "Level 1": {
+                "height": 3.100000000000378,
+                "floor_type": "Regular"
+            },
+            "Level 2": {
+                "height": 2.900000000000012,
+                "floor_type": "Regular"
+            },
+            "Roof": {
+                "height": 0,
+                "floor_type": "Roof"
+            }
+        },
+        "ifc_elements": {
+            "2O2Fr$t4X7Zf8NOew3FNld": {
+                "storey": "Level 1",
+                "type": "IfcWallStandardCase",
+                "volume": 1.241796140000085,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.7419354838709677
+                    ],
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FNbT": {
+                "storey": "Level 1",
+                "type": "IfcWallStandardCase",
+                "volume": 5.788704935000469,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.02909090909090909
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.07454545454545454
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.3509090909090909
+                    ],
+                    [
+                        "Misc. Air Layers - Air Space",
+                        0.09090909090909091
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.3509090909090909
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.07454545454545454
+                    ],
+                    [
+                        "Plasterboard",
+                        0.02909090909090909
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FKRi": {
+                "storey": "Level 1",
+                "type": "IfcWallStandardCase",
+                "volume": 5.788704935000408,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.02909090909090909
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.07454545454545454
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.3509090909090909
+                    ],
+                    [
+                        "Misc. Air Layers - Air Space",
+                        0.09090909090909091
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.3509090909090909
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.07454545454545454
+                    ],
+                    [
+                        "Plasterboard",
+                        0.02909090909090909
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FKRH": {
+                "storey": "Level 1",
+                "type": "IfcWallStandardCase",
+                "volume": 2.010723000000178,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.02909090909090909
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.07454545454545454
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.3509090909090909
+                    ],
+                    [
+                        "Misc. Air Layers - Air Space",
+                        0.09090909090909091
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.3509090909090909
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.07454545454545454
+                    ],
+                    [
+                        "Plasterboard",
+                        0.02909090909090909
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FKIu": {
+                "storey": "Level 1",
+                "type": "IfcWallStandardCase",
+                "volume": 0.5046204800000355,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.7419354838709677
+                    ],
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FKGS": {
+                "storey": "Level 1",
+                "type": "IfcWallStandardCase",
+                "volume": 1.241796140000083,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.7419354838709677
+                    ],
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FK80": {
+                "storey": "T/FDN",
+                "type": "IfcWallStandardCase",
+                "volume": 4.587000000000002,
+                "materials": [
+                    [
+                        "Concrete - Cast In Situ",
+                        1.0
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FK9N": {
+                "storey": "T/FDN",
+                "type": "IfcWallStandardCase",
+                "volume": 9.06088875,
+                "materials": [
+                    [
+                        "Concrete - Cast In Situ",
+                        1.0
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FKEr": {
+                "storey": "T/FDN",
+                "type": "IfcWallStandardCase",
+                "volume": 4.36963874999999,
+                "materials": [
+                    [
+                        "Concrete - Cast In Situ",
+                        1.0
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FKE5": {
+                "storey": "T/FDN",
+                "type": "IfcWallStandardCase",
+                "volume": 8.84352749999999,
+                "materials": [
+                    [
+                        "Concrete - Cast In Situ",
+                        1.0
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FK3E": {
+                "storey": "T/FDN",
+                "type": "IfcWallStandardCase",
+                "volume": 2.284021874999995,
+                "materials": [
+                    [
+                        "Concrete - Cast In Situ",
+                        1.0
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FK04": {
+                "storey": "T/FDN",
+                "type": "IfcWallStandardCase",
+                "volume": 2.284021875,
+                "materials": [
+                    [
+                        "Concrete - Cast In Situ",
+                        1.0
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FK1b": {
+                "storey": "T/FDN",
+                "type": "IfcWallStandardCase",
+                "volume": 0.8622113250000139,
+                "materials": [
+                    [
+                        "Concrete - Cast In Situ",
+                        1.0
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FKau": {
+                "storey": "Level 2",
+                "type": "IfcWall",
+                "volume": 25.83011720000005,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.02909090909090909
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.07454545454545454
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.3509090909090909
+                    ],
+                    [
+                        "Misc. Air Layers - Air Space",
+                        0.09090909090909091
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.3509090909090909
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.07454545454545454
+                    ],
+                    [
+                        "Plasterboard",
+                        0.02909090909090909
+                    ]
+                ],
+                "structural": true
+            },
+            "2O2Fr$t4X7Zf8NOew3FLMr": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.8638984000000003,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.08695652173913043
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.8260869565217391
+                    ],
+                    [
+                        "Plasterboard",
+                        0.08695652173913043
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FLKI": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.5821923999999986,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.7419354838709677
+                    ],
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FLEJ": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.5821924000000085,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.7419354838709677
+                    ],
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FLCm": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.8638984000000101,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.08695652173913043
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.8260869565217391
+                    ],
+                    [
+                        "Plasterboard",
+                        0.08695652173913043
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FNqI": {
+                "storey": "Level 1",
+                "type": "IfcWallStandardCase",
+                "volume": 20.73524160000141,
+                "materials": [
+                    [
+                        "Masonry - Brick",
+                        0.22062350119904078
+                    ],
+                    [
+                        "Misc. Air Layers - Air Space",
+                        0.059952038369304565
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Rigid insulation",
+                        0.11990407673860913
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.4628297362110312
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.09832134292565949
+                    ],
+                    [
+                        "Plasterboard",
+                        0.03836930455635492
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FNhv": {
+                "storey": "Level 1",
+                "type": "IfcWallStandardCase",
+                "volume": 20.19618570000135,
+                "materials": [
+                    [
+                        "Masonry - Brick",
+                        0.22062350119904078
+                    ],
+                    [
+                        "Misc. Air Layers - Air Space",
+                        0.059952038369304565
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Rigid insulation",
+                        0.11990407673860913
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.4628297362110312
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.09832134292565949
+                    ],
+                    [
+                        "Plasterboard",
+                        0.03836930455635492
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FLQD": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 6.54599802900005,
+                "materials": [
+                    [
+                        "Masonry - Brick",
+                        0.22062350119904078
+                    ],
+                    [
+                        "Misc. Air Layers - Air Space",
+                        0.059952038369304565
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Rigid insulation",
+                        0.11990407673860913
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.4628297362110312
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.09832134292565949
+                    ],
+                    [
+                        "Plasterboard",
+                        0.03836930455635492
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FLOH": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 6.54599802900002,
+                "materials": [
+                    [
+                        "Masonry - Brick",
+                        0.22062350119904078
+                    ],
+                    [
+                        "Misc. Air Layers - Air Space",
+                        0.059952038369304565
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Rigid insulation",
+                        0.11990407673860913
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.4628297362110312
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.09832134292565949
+                    ],
+                    [
+                        "Plasterboard",
+                        0.03836930455635492
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FKST": {
+                "storey": "Level 1",
+                "type": "IfcWallStandardCase",
+                "volume": 0.8200139840000846,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.7419354838709677
+                    ],
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FNau": {
+                "storey": "Level 1",
+                "type": "IfcWallStandardCase",
+                "volume": 0.8200139840000854,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.7419354838709677
+                    ],
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FLTF": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.6599136160000535,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.7419354838709677
+                    ],
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FL8v": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.659913615999995,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.7419354838709677
+                    ],
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FLJd": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.488913648,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.7419354838709677
+                    ],
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FL96": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.4889136479999963,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.7419354838709677
+                    ],
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FLIE": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 1.732770048000006,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.7419354838709677
+                    ],
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FL9r": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 1.732770048000005,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.7419354838709677
+                    ],
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FNtn": {
+                "storey": "Level 1",
+                "type": "IfcWallStandardCase",
+                "volume": 5.676137280000731,
+                "materials": [
+                    [
+                        "Masonry - Brick",
+                        0.22062350119904078
+                    ],
+                    [
+                        "Misc. Air Layers - Air Space",
+                        0.059952038369304565
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Rigid insulation",
+                        0.11990407673860913
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.4628297362110312
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.09832134292565949
+                    ],
+                    [
+                        "Plasterboard",
+                        0.03836930455635492
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FNr2": {
+                "storey": "Level 1",
+                "type": "IfcWallStandardCase",
+                "volume": 5.137081380000661,
+                "materials": [
+                    [
+                        "Masonry - Brick",
+                        0.22062350119904078
+                    ],
+                    [
+                        "Misc. Air Layers - Air Space",
+                        0.059952038369304565
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Rigid insulation",
+                        0.11990407673860913
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.4628297362110312
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.09832134292565949
+                    ],
+                    [
+                        "Plasterboard",
+                        0.03836930455635492
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FLR9": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 16.74164802900009,
+                "materials": [
+                    [
+                        "Masonry - Brick",
+                        0.22062350119904078
+                    ],
+                    [
+                        "Misc. Air Layers - Air Space",
+                        0.059952038369304565
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Rigid insulation",
+                        0.11990407673860913
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.4628297362110312
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.09832134292565949
+                    ],
+                    [
+                        "Plasterboard",
+                        0.03836930455635492
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FLPP": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 16.74164802900007,
+                "materials": [
+                    [
+                        "Masonry - Brick",
+                        0.22062350119904078
+                    ],
+                    [
+                        "Misc. Air Layers - Air Space",
+                        0.059952038369304565
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Rigid insulation",
+                        0.11990407673860913
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.4628297362110312
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.09832134292565949
+                    ],
+                    [
+                        "Plasterboard",
+                        0.03836930455635492
+                    ]
+                ],
+                "structural": false
+            },
+            "0jf0rYHfX3RAB3bSIRjmmy": {
+                "storey": "Roof",
+                "type": "IfcWallStandardCase",
+                "volume": 2.234786400000001,
+                "materials": [
+                    [
+                        "Masonry - Brick",
+                        0.22062350119904078
+                    ],
+                    [
+                        "Misc. Air Layers - Air Space",
+                        0.059952038369304565
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Rigid insulation",
+                        0.11990407673860913
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.4628297362110312
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.09832134292565949
+                    ],
+                    [
+                        "Plasterboard",
+                        0.03836930455635492
+                    ]
+                ],
+                "structural": false
+            },
+            "0jf0rYHfX3RAB3bSIRjmpw": {
+                "storey": "Roof",
+                "type": "IfcWallStandardCase",
+                "volume": 4.414464998999998,
+                "materials": [
+                    [
+                        "Masonry - Brick",
+                        0.22062350119904078
+                    ],
+                    [
+                        "Misc. Air Layers - Air Space",
+                        0.059952038369304565
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Rigid insulation",
+                        0.11990407673860913
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.4628297362110312
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.09832134292565949
+                    ],
+                    [
+                        "Plasterboard",
+                        0.03836930455635492
+                    ]
+                ],
+                "structural": false
+            },
+            "0jf0rYHfX3RAB3bSIRjmoa": {
+                "storey": "Roof",
+                "type": "IfcWallStandardCase",
+                "volume": 2.128887998999996,
+                "materials": [
+                    [
+                        "Masonry - Brick",
+                        0.22062350119904078
+                    ],
+                    [
+                        "Misc. Air Layers - Air Space",
+                        0.059952038369304565
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Rigid insulation",
+                        0.11990407673860913
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.4628297362110312
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.09832134292565949
+                    ],
+                    [
+                        "Plasterboard",
+                        0.03836930455635492
+                    ]
+                ],
+                "structural": false
+            },
+            "0jf0rYHfX3RAB3bSIRjmr1": {
+                "storey": "Roof",
+                "type": "IfcWallStandardCase",
+                "volume": 4.308566597999995,
+                "materials": [
+                    [
+                        "Masonry - Brick",
+                        0.22062350119904078
+                    ],
+                    [
+                        "Misc. Air Layers - Air Space",
+                        0.059952038369304565
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Rigid insulation",
+                        0.11990407673860913
+                    ],
+                    [
+                        "Masonry - Concrete Block",
+                        0.4628297362110312
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.09832134292565949
+                    ],
+                    [
+                        "Plasterboard",
+                        0.03836930455635492
+                    ]
+                ],
+                "structural": false
+            },
+            "0iEHWY1$XA8eQeeULq4jZ1": {
+                "storey": "Level 1",
+                "type": "IfcWallStandardCase",
+                "volume": 1.849328520000124,
+                "materials": [
+                    [
+                        "Metal - Stud Layer",
+                        0.894736842105263
+                    ],
+                    [
+                        "Plasterboard",
+                        0.10526315789473682
+                    ]
+                ],
+                "structural": false
+            },
+            "0iEHWY1$XA8eQeeULq4j_U": {
+                "storey": "Level 1",
+                "type": "IfcWallStandardCase",
+                "volume": 1.009781600000084,
+                "materials": [
+                    [
+                        "Metal - Stud Layer",
+                        0.894736842105263
+                    ],
+                    [
+                        "Plasterboard",
+                        0.10526315789473682
+                    ]
+                ],
+                "structural": false
+            },
+            "0iEHWY1$XA8eQeeULq4jpl": {
+                "storey": "Level 1",
+                "type": "IfcWallStandardCase",
+                "volume": 0.5046204800000358,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.7419354838709677
+                    ],
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ]
+                ],
+                "structural": false
+            },
+            "0iEHWY1$XA8eQeeULq4jDb": {
+                "storey": "Level 1",
+                "type": "IfcWallStandardCase",
+                "volume": 0.97500780000008,
+                "materials": [
+                    [
+                        "Metal - Stud Layer",
+                        0.894736842105263
+                    ],
+                    [
+                        "Plasterboard",
+                        0.10526315789473682
+                    ]
+                ],
+                "structural": false
+            },
+            "0iEHWY1$XA8eQeeULq4jE6": {
+                "storey": "Level 1",
+                "type": "IfcWallStandardCase",
+                "volume": 1.784752840000126,
+                "materials": [
+                    [
+                        "Metal - Stud Layer",
+                        0.894736842105263
+                    ],
+                    [
+                        "Plasterboard",
+                        0.10526315789473682
+                    ]
+                ],
+                "structural": false
+            },
+            "0dxE1Sy6nDqfpDb5vIMNiA": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 1.64087040000001,
+                "materials": [
+                    [
+                        "Metal - Stud Layer",
+                        0.894736842105263
+                    ],
+                    [
+                        "Plasterboard",
+                        0.10526315789473682
+                    ]
+                ],
+                "structural": false
+            },
+            "0dxE1Sy6nDqfpDb5vIMN_Z": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 1.640870400000006,
+                "materials": [
+                    [
+                        "Metal - Stud Layer",
+                        0.894736842105263
+                    ],
+                    [
+                        "Plasterboard",
+                        0.10526315789473682
+                    ]
+                ],
+                "structural": false
+            },
+            "1aj$VJZFn2TxepZUBcKpvt": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.3560307839999987,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.7419354838709677
+                    ],
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ]
+                ],
+                "structural": false
+            },
+            "1aj$VJZFn2TxepZUBcKpZw": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.3560307840000087,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.7419354838709677
+                    ],
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ]
+                ],
+                "structural": false
+            },
+            "1aj$VJZFn2TxepZUBcKpee": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.2102792000000843,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.7419354838709677
+                    ],
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ]
+                ],
+                "structural": false
+            },
+            "1aj$VJZFn2TxepZUBcKphf": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.2102792000000842,
+                "materials": [
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ],
+                    [
+                        "Metal - Stud Layer",
+                        0.7419354838709677
+                    ],
+                    [
+                        "Plasterboard",
+                        0.12903225806451613
+                    ]
+                ],
+                "structural": false
+            },
+            "3Y4YRln2r91vflHcHE5IVS": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.01684437120000063,
+                "materials": [
+                    [
+                        "Metal - Stud Layer",
+                        0.7037037037037037
+                    ],
+                    [
+                        "Plasterboard",
+                        0.2962962962962963
+                    ]
+                ],
+                "structural": false
+            },
+            "3Y4YRln2r91vflHcHE5IVT": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.01765307519999999,
+                "materials": [
+                    [
+                        "Metal - Stud Layer",
+                        0.7037037037037037
+                    ],
+                    [
+                        "Plasterboard",
+                        0.2962962962962963
+                    ]
+                ],
+                "structural": false
+            },
+            "3Y4YRln2r91vflHcHE5IVI": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.01684437120000063,
+                "materials": [
+                    [
+                        "Metal - Stud Layer",
+                        0.7037037037037037
+                    ],
+                    [
+                        "Plasterboard",
+                        0.2962962962962963
+                    ]
+                ],
+                "structural": false
+            },
+            "3Y4YRln2r91vflHcHE5IVJ": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.01765307520000002,
+                "materials": [
+                    [
+                        "Metal - Stud Layer",
+                        0.7037037037037037
+                    ],
+                    [
+                        "Plasterboard",
+                        0.2962962962962963
+                    ]
+                ],
+                "structural": false
+            },
+            "3Y4YRln2r91vflHcHE5ITp": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.01684437120000095,
+                "materials": [
+                    [
+                        "Metal - Stud Layer",
+                        0.7037037037037037
+                    ],
+                    [
+                        "Plasterboard",
+                        0.2962962962962963
+                    ]
+                ],
+                "structural": false
+            },
+            "3Y4YRln2r91vflHcHE5ITm": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.0176530752000001,
+                "materials": [
+                    [
+                        "Metal - Stud Layer",
+                        0.7037037037037037
+                    ],
+                    [
+                        "Plasterboard",
+                        0.2962962962962963
+                    ]
+                ],
+                "structural": false
+            },
+            "3Y4YRln2r91vflHcHE5ITn": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.01684437120000095,
+                "materials": [
+                    [
+                        "Metal - Stud Layer",
+                        0.7037037037037037
+                    ],
+                    [
+                        "Plasterboard",
+                        0.2962962962962963
+                    ]
+                ],
+                "structural": false
+            },
+            "3Y4YRln2r91vflHcHE5ITs": {
+                "storey": "Level 2",
+                "type": "IfcWallStandardCase",
+                "volume": 0.01765307520000009,
+                "materials": [
+                    [
+                        "Metal - Stud Layer",
+                        0.7037037037037037
+                    ],
+                    [
+                        "Plasterboard",
+                        0.2962962962962963
+                    ]
+                ],
+                "structural": false
+            },
+            "2O2Fr$t4X7Zf8NOew3FK4F": {
+                "storey": "Level 1",
+                "type": "IfcSlab",
+                "volume": 8.22705085599999,
+                "materials": [
+                    [
+                        "Concrete",
+                        1.0
+                    ]
+                ],
+                "structural": true
+            },
+            "2O2Fr$t4X7Zf8NOew3FKcz": {
+                "storey": "Level 1",
+                "type": "IfcSlab",
+                "volume": 8.243116355999971,
+                "materials": [
+                    [
+                        "Concrete",
+                        1.0
+                    ]
+                ],
+                "structural": true
+            },
+            "1hOSvn6df7F8_7GcBWlRqU": {
+                "storey": "Level 2",
+                "type": "IfcSlab",
+                "volume": 18.06485036799987,
+                "materials": [
+                    [
+                        "Wood - Sheathing - plywood",
+                        0.06229508196721312
+                    ],
+                    [
+                        "Wood - Dimensional Lumber",
+                        0.9377049180327869
+                    ]
+                ],
+                "structural": true
+            },
+            "1hOSvn6df7F8_7GcBWlRrM": {
+                "storey": "Level 2",
+                "type": "IfcSlab",
+                "volume": 18.09679301799989,
+                "materials": [
+                    [
+                        "Wood - Sheathing - plywood",
+                        0.06229508196721312
+                    ],
+                    [
+                        "Wood - Dimensional Lumber",
+                        0.9377049180327869
+                    ]
+                ],
+                "structural": true
+            },
+            "2OBrcmyk58NupXoVOHUtC0": {
+                "storey": "Level 2",
+                "type": "IfcSlab",
+                "volume": 0.4188214079999995,
+                "materials": [
+                    [
+                        "Wood - Flooring",
+                        0.8421052631578948
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Semi-rigid insulation",
+                        0.15789473684210528
+                    ]
+                ],
+                "structural": true
+            },
+            "2OBrcmyk58NupXoVOHUtDX": {
+                "storey": "Level 2",
+                "type": "IfcSlab",
+                "volume": 0.4188214079999987,
+                "materials": [
+                    [
+                        "Wood - Flooring",
+                        0.8421052631578948
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Semi-rigid insulation",
+                        0.15789473684210528
+                    ]
+                ],
+                "structural": true
+            },
+            "2OBrcmyk58NupXoVOHUtBP": {
+                "storey": "Level 2",
+                "type": "IfcSlab",
+                "volume": 0.4193135840000009,
+                "materials": [
+                    [
+                        "Wood - Flooring",
+                        0.8421052631578948
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Semi-rigid insulation",
+                        0.15789473684210528
+                    ]
+                ],
+                "structural": true
+            },
+            "2OBrcmyk58NupXoVOHUt8F": {
+                "storey": "Level 2",
+                "type": "IfcSlab",
+                "volume": 0.4188214079999972,
+                "materials": [
+                    [
+                        "Wood - Flooring",
+                        0.8421052631578948
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Semi-rigid insulation",
+                        0.15789473684210528
+                    ]
+                ],
+                "structural": true
+            },
+            "2OBrcmyk58NupXoVOHUt8s": {
+                "storey": "Level 2",
+                "type": "IfcSlab",
+                "volume": 0.1370064919999997,
+                "materials": [
+                    [
+                        "Wood - Flooring",
+                        0.8421052631578948
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Semi-rigid insulation",
+                        0.15789473684210528
+                    ]
+                ],
+                "structural": true
+            },
+            "2OBrcmyk58NupXoVOHUt5W": {
+                "storey": "Level 2",
+                "type": "IfcSlab",
+                "volume": 0.1370064919999993,
+                "materials": [
+                    [
+                        "Wood - Flooring",
+                        0.8421052631578948
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Semi-rigid insulation",
+                        0.15789473684210528
+                    ]
+                ],
+                "structural": true
+            },
+            "2OBrcmyk58NupXoVOHUt2f": {
+                "storey": "Level 2",
+                "type": "IfcSlab",
+                "volume": 0.08241791999999794,
+                "materials": [
+                    [
+                        "Ceramic Tile",
+                        0.7692307692307692
+                    ],
+                    [
+                        "Masonry - Grout",
+                        0.23076923076923075
+                    ]
+                ],
+                "structural": true
+            },
+            "2OBrcmyk58NupXoVOHUt0F": {
+                "storey": "Level 2",
+                "type": "IfcSlab",
+                "volume": 0.08241791999999935,
+                "materials": [
+                    [
+                        "Ceramic Tile",
+                        0.7692307692307692
+                    ],
+                    [
+                        "Masonry - Grout",
+                        0.23076923076923075
+                    ]
+                ],
+                "structural": true
+            },
+            "2OBrcmyk58NupXoVOHUtxr": {
+                "storey": "Level 1",
+                "type": "IfcSlab",
+                "volume": 0.895848460999996,
+                "materials": [
+                    [
+                        "Wood - Flooring",
+                        0.8421052631578948
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Semi-rigid insulation",
+                        0.15789473684210528
+                    ]
+                ],
+                "structural": true
+            },
+            "2OBrcmyk58NupXoVOHUtoa": {
+                "storey": "Level 1",
+                "type": "IfcSlab",
+                "volume": 0.1684029099999966,
+                "materials": [
+                    [
+                        "Ceramic Tile",
+                        0.7692307692307692
+                    ],
+                    [
+                        "Masonry - Grout",
+                        0.23076923076923075
+                    ]
+                ],
+                "structural": true
+            },
+            "2OBrcmyk58NupXoVOHUtjR": {
+                "storey": "Level 1",
+                "type": "IfcSlab",
+                "volume": 0.04109268800000055,
+                "materials": [
+                    [
+                        "Ceramic Tile",
+                        0.7692307692307692
+                    ],
+                    [
+                        "Masonry - Grout",
+                        0.23076923076923075
+                    ]
+                ],
+                "structural": true
+            },
+            "2OBrcmyk58NupXoVOHUtju": {
+                "storey": "Level 1",
+                "type": "IfcSlab",
+                "volume": 0.04109268800000098,
+                "materials": [
+                    [
+                        "Ceramic Tile",
+                        0.7692307692307692
+                    ],
+                    [
+                        "Masonry - Grout",
+                        0.23076923076923075
+                    ]
+                ],
+                "structural": true
+            },
+            "2OBrcmyk58NupXoVOHUtgP": {
+                "storey": "Level 1",
+                "type": "IfcSlab",
+                "volume": 0.8958524460703874,
+                "materials": [
+                    [
+                        "Wood - Flooring",
+                        0.8421052631578948
+                    ],
+                    [
+                        "Insulation / Thermal Barriers - Semi-rigid insulation",
+                        0.15789473684210528
+                    ]
+                ],
+                "structural": true
+            },
+            "2OBrcmyk58NupXoVOHUten": {
+                "storey": "Level 1",
+                "type": "IfcSlab",
+                "volume": 0.168402909999997,
+                "materials": [
+                    [
+                        "Ceramic Tile",
+                        0.7692307692307692
+                    ],
+                    [
+                        "Masonry - Grout",
+                        0.23076923076923075
+                    ]
+                ],
+                "structural": true
+            },
+            "1CZILmCaHETO8tf3SgGEWh": {
+                "storey": "Level 1",
+                "type": "IfcSlab",
+                "volume": 3.81297858000003,
+                "materials": [
+                    [
+                        "Concrete - Cast In Situ",
+                        1.0
+                    ]
+                ],
+                "structural": true
+            },
+            "1CZILmCaHETO8tf3SgGEXu": {
+                "storey": "Level 1",
+                "type": "IfcSlab",
+                "volume": 3.812978580000001,
+                "materials": [
+                    [
+                        "Concrete - Cast In Situ",
+                        1.0
+                    ]
+                ],
+                "structural": true
+            }
+        }
+    },
+    "polygons": {
+        "2O2Fr$t4X7Zf8NOew3FNld": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"74.28,545.49 74.28,652.98 78.0,652.98 78.0,545.49 74.28,545.49\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FNbT": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"251.49,423.24 125.46,423.24 125.46,438.03 251.49,438.03 251.49,423.24\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FKRi": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"138.54,358.95 12.51,358.95 12.51,373.74 138.54,373.74 138.54,358.95\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FKRH": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"125.46,373.74 125.46,423.24 123.75,423.24 123.75,431.49 140.25,431.49 140.25,423.24 138.54,423.24 138.54,373.74 140.25,373.74 140.25,365.49 123.75,365.49 123.75,373.74 125.46,373.74\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FKIu": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"186.78,354.39 143.1,354.39 143.1,358.11 186.78,358.11 186.78,354.39\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FKGS": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"186.0,144.0 186.0,251.49 189.72,251.49 189.72,144.0 186.0,144.0\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FK80": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"264.0,652.98 0.0,652.98 0.0,665.49 264.0,665.49 264.0,652.98\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FK9N": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"251.49,131.49 251.49,652.98 264.0,652.98 264.0,131.49 251.49,131.49\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FKEr": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"0.0,144.0 251.49,144.0 251.49,131.49 0.0,131.49 0.0,144.0\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FKE5": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"12.51,652.98 12.51,144.0 0.0,144.0 0.0,652.98 12.51,652.98\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FK3E": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"125.46,438.0 251.49,438.0 251.49,424.95 125.46,424.95 125.46,438.0\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FK04": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"138.51,358.95 12.51,358.95 12.51,372.03 138.51,372.03 138.51,358.95\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FK1b": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"138.51,424.98 138.51,372.0 125.46,372.0 125.46,424.98 138.51,424.98\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FKau": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"123.75,465.51 123.75,652.98 140.25,652.98 140.25,465.51 140.25,461.79 140.25,336.99 140.25,331.47 140.25,144.0 123.75,144.0 123.75,331.47 123.75,335.19 123.75,459.99 123.75,465.51\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FLMr": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"123.75,459.99 75.18,459.99 75.18,465.51 123.75,465.51 123.75,459.99\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FLKI": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"75.18,335.19 123.75,335.19 123.75,331.47 75.18,331.47 75.18,335.19\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FLEJ": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"188.82,461.79 140.25,461.79 140.25,465.51 188.82,465.51 188.82,461.79\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FLCm": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"140.25,336.99 188.82,336.99 188.82,331.47 140.25,331.47 140.25,336.99\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FNqI": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"264.0,198.9 264.0,161.4 264.0,131.49 251.49,131.49 251.49,161.4 251.49,198.9 251.49,487.14 251.49,509.64 251.49,652.98 264.0,652.98 264.0,509.64 264.0,487.14 264.0,198.9\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FNhv": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"12.51,635.58 12.51,598.08 12.51,309.84 12.51,287.34 12.51,144.0 0.0,144.0 0.0,287.34 0.0,309.84 0.0,598.08 0.0,635.58 0.0,652.98 12.51,652.98 12.51,635.58\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FLQD": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"37.08,665.49 39.75,665.49 123.75,665.49 264.0,665.49 251.49,652.98 123.75,652.98 39.75,652.98 37.08,652.98 12.51,652.98 0.0,665.49 12.51,665.49 37.08,665.49\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FLOH": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"226.92,144.0 251.49,144.0 264.0,131.49 251.49,131.49 226.92,131.49 224.25,131.49 140.25,131.49 0.0,131.49 12.51,144.0 140.25,144.0 224.25,144.0 226.92,144.0\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FKST": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"186.78,363.9 186.78,386.76 186.78,423.24 190.5,423.24 190.5,386.76 190.5,363.9 190.5,335.64 186.78,335.64 186.78,363.9\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FNau": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"73.5,433.02 73.5,461.34 77.22,461.34 77.22,433.02 77.22,410.16 77.22,373.74 73.5,373.74 73.5,410.16 73.5,433.02\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FLTF": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"70.41,477.99 44.49,477.99 12.51,477.99 12.51,481.71 44.49,481.71 70.41,481.71 75.18,481.71 75.18,477.99 70.41,477.99\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FL8v": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"219.63,318.99 251.49,318.99 251.49,315.27 219.63,315.27 193.71,315.27 188.82,315.27 188.82,318.99 193.71,318.99 219.63,318.99\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FLJd": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"42.54,318.99 68.46,318.99 71.46,318.99 71.46,315.27 68.46,315.27 42.54,315.27 12.51,315.27 12.51,318.99 42.54,318.99\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FL96": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"192.54,481.71 194.34,481.71 220.26,481.71 251.49,481.71 251.49,477.99 220.26,477.99 194.34,477.99 192.54,477.99 192.54,481.71\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FLIE": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"71.46,395.31 71.46,477.99 75.18,477.99 75.18,395.31 75.18,369.39 75.18,315.27 71.46,315.27 71.46,369.39 71.46,395.31\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FL9r": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"188.82,401.22 188.82,427.14 188.82,481.71 192.54,481.71 192.54,427.14 192.54,401.22 192.54,318.99 188.82,318.99 188.82,401.22\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FNtn": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"79.05,652.98 0.0,652.98 0.0,665.49 79.05,665.49 103.44,665.49 106.44,665.49 251.49,665.49 264.0,665.49 264.0,652.98 251.49,652.98 106.44,652.98 103.44,652.98 79.05,652.98\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FNr2": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"0.0,131.49 0.0,144.0 12.51,144.0 157.56,144.0 160.56,144.0 184.95,144.0 251.49,144.0 251.49,131.49 184.95,131.49 160.56,131.49 157.56,131.49 12.51,131.49 0.0,131.49\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FLR9": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"264.0,289.77 264.0,131.49 251.49,144.0 251.49,289.77 251.49,312.27 251.49,541.41 251.49,565.98 251.49,568.98 251.49,652.98 264.0,665.49 264.0,652.98 264.0,568.98 264.0,565.98 264.0,541.41 264.0,312.27 264.0,289.77\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FLPP": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"0.0,255.57 0.0,484.71 0.0,507.21 0.0,665.49 12.51,652.98 12.51,507.21 12.51,484.71 12.51,255.57 12.51,231.0 12.51,228.0 12.51,144.0 0.0,131.49 0.0,144.0 0.0,228.0 0.0,231.0 0.0,255.57\"\\>\n</svg>\n",
+        "0jf0rYHfX3RAB3bSIRjmmy": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"264.0,652.98 0.0,652.98 0.0,665.49 264.0,665.49 264.0,652.98\"\\>\n</svg>\n",
+        "0jf0rYHfX3RAB3bSIRjmpw": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"251.49,131.49 251.49,652.98 264.0,652.98 264.0,131.49 251.49,131.49\"\\>\n</svg>\n",
+        "0jf0rYHfX3RAB3bSIRjmoa": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"0.0,144.0 251.49,144.0 251.49,131.49 0.0,131.49 0.0,144.0\"\\>\n</svg>\n",
+        "0jf0rYHfX3RAB3bSIRjmr1": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"12.51,652.98 12.51,144.0 0.0,144.0 0.0,652.98 12.51,652.98\"\\>\n</svg>\n",
+        "0iEHWY1$XA8eQeeULq4jZ1": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"120.9,442.59 251.49,442.59 251.49,438.03 120.9,438.03 120.9,442.59\"\\>\n</svg>\n",
+        "0iEHWY1$XA8eQeeULq4j_U": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"125.46,438.03 125.46,373.74 120.9,373.74 120.9,438.03 125.46,438.03\"\\>\n</svg>\n",
+        "0iEHWY1$XA8eQeeULq4jpl": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"77.22,442.59 120.9,442.59 120.9,438.87 77.22,438.87 77.22,442.59\"\\>\n</svg>\n",
+        "0iEHWY1$XA8eQeeULq4jDb": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"138.54,354.39 138.54,423.24 143.1,423.24 143.1,354.39 138.54,354.39\"\\>\n</svg>\n",
+        "0iEHWY1$XA8eQeeULq4jE6": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"138.54,354.39 12.51,354.39 12.51,358.95 138.54,358.95 138.54,354.39\"\\>\n</svg>\n",
+        "0dxE1Sy6nDqfpDb5vIMNiA": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"138.54,336.99 138.54,461.79 143.1,461.79 143.1,336.99 138.54,336.99\"\\>\n</svg>\n",
+        "0dxE1Sy6nDqfpDb5vIMN_Z": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"125.46,459.99 125.46,335.19 120.9,335.19 120.9,459.99 125.46,459.99\"\\>\n</svg>\n",
+        "1aj$VJZFn2TxepZUBcKpvt": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"75.78,366.39 98.64,366.39 120.9,366.39 120.9,362.67 98.64,362.67 75.78,362.67 75.18,362.67 75.18,366.39 75.78,366.39\"\\>\n</svg>\n",
+        "1aj$VJZFn2TxepZUBcKpZw": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"143.1,433.86 165.93,433.86 188.79,433.86 188.82,433.86 188.82,430.14 188.79,430.14 165.93,430.14 143.1,430.14 143.1,433.86\"\\>\n</svg>\n",
+        "1aj$VJZFn2TxepZUBcKpee": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"42.93,373.74 42.93,477.99 46.65,477.99 46.65,373.74 42.93,373.74\"\\>\n</svg>\n",
+        "1aj$VJZFn2TxepZUBcKphf": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"221.07,423.24 221.07,318.99 217.35,318.99 217.35,423.24 221.07,423.24\"\\>\n</svg>\n",
+        "3Y4YRln2r91vflHcHE5IVS": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"237.72,467.67 205.2,467.67 205.2,469.29 237.72,469.29 237.72,467.67\"\\>\n</svg>\n",
+        "3Y4YRln2r91vflHcHE5IVT": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"206.82,467.67 206.82,433.59 205.2,433.59 205.2,467.67 206.82,467.67\"\\>\n</svg>\n",
+        "3Y4YRln2r91vflHcHE5IVI": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"206.82,435.21 239.34,435.21 239.34,433.59 206.82,433.59 206.82,435.21\"\\>\n</svg>\n",
+        "3Y4YRln2r91vflHcHE5IVJ": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"237.72,435.21 237.72,469.29 239.34,469.29 239.34,435.21 237.72,435.21\"\\>\n</svg>\n",
+        "3Y4YRln2r91vflHcHE5ITp": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"56.73,361.77 24.21,361.77 24.21,363.39 56.73,363.39 56.73,361.77\"\\>\n</svg>\n",
+        "3Y4YRln2r91vflHcHE5ITm": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"25.83,361.77 25.83,327.69 24.21,327.69 24.21,361.77 25.83,361.77\"\\>\n</svg>\n",
+        "3Y4YRln2r91vflHcHE5ITn": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"25.83,329.31 58.35,329.31 58.35,327.69 25.83,327.69 25.83,329.31\"\\>\n</svg>\n",
+        "3Y4YRln2r91vflHcHE5ITs": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"black\">\n<polygon points=\"56.73,329.31 56.73,363.39 58.35,363.39 58.35,329.31 56.73,329.31\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FK4F": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"12.51,373.74 12.51,652.98 251.49,652.98 251.49,439.74 123.75,439.74 123.75,373.74 12.51,373.74\"\\>\n</svg>\n",
+        "2O2Fr$t4X7Zf8NOew3FKcz": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"138.51,357.24 138.51,423.24 251.49,423.24 251.49,144.0 12.51,144.0 12.51,357.24 138.51,357.24\"\\>\n</svg>\n",
+        "1hOSvn6df7F8_7GcBWlRqU": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"12.51,373.74 44.13,373.74 44.13,478.47 12.51,478.47 12.51,652.98 123.75,652.98 123.75,144.0 12.51,144.0 12.51,373.74\"\\>\n</svg>\n",
+        "1hOSvn6df7F8_7GcBWlRrM": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"140.25,652.98 251.49,652.98 251.49,423.24 220.77,423.24 220.77,318.51 251.49,318.51 251.49,144.0 140.25,144.0 140.25,652.98\"\\>\n</svg>\n",
+        "2OBrcmyk58NupXoVOHUtC0": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"12.51,652.98 123.75,652.98 123.75,465.51 75.18,465.51 75.18,481.71 12.51,481.71 12.51,652.98\"\\>\n</svg>\n",
+        "2OBrcmyk58NupXoVOHUtDX": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"140.25,465.51 140.25,652.98 251.49,652.98 251.49,481.71 188.82,481.71 188.82,465.51 140.25,465.51\"\\>\n</svg>\n",
+        "2OBrcmyk58NupXoVOHUtBP": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"188.82,315.27 251.49,315.27 251.49,144.0 140.25,144.0 140.25,331.95 188.82,331.95 188.82,315.27\"\\>\n</svg>\n",
+        "2OBrcmyk58NupXoVOHUt8F": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"75.18,315.27 75.18,331.47 123.75,331.47 123.75,144.0 12.51,144.0 12.51,315.27 75.18,315.27\"\\>\n</svg>\n",
+        "2OBrcmyk58NupXoVOHUt8s": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"42.54,315.27 42.54,318.99 12.51,318.99 12.51,373.74 42.93,373.74 42.93,477.99 44.49,477.99 44.49,481.71 70.41,481.71 70.41,477.99 71.46,477.99 71.46,395.31 75.18,395.31 75.18,369.39 71.46,369.39 71.46,318.99 68.46,318.99 68.46,315.27 42.54,315.27\"\\>\n</svg>\n",
+        "2OBrcmyk58NupXoVOHUt5W": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"192.54,401.22 188.82,401.22 188.82,427.14 192.54,427.14 192.54,477.99 194.34,477.99 194.34,481.71 220.26,481.71 220.26,477.99 251.49,477.99 251.49,423.24 221.07,423.24 221.07,318.99 219.63,318.99 219.63,315.27 193.71,315.27 193.71,318.99 192.54,318.99 192.54,401.22\"\\>\n</svg>\n",
+        "2OBrcmyk58NupXoVOHUt2f": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"75.18,459.99 120.9,459.99 120.9,335.19 75.18,335.19 75.18,459.99\"\\>\n</svg>\n",
+        "2OBrcmyk58NupXoVOHUt0F": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"143.1,461.79 188.82,461.79 188.82,336.99 143.1,336.99 143.1,461.79\"\\>\n</svg>\n",
+        "2OBrcmyk58NupXoVOHUtxr": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"12.51,287.49 186.78,287.49 186.78,335.64 190.5,335.64 190.5,363.9 186.78,363.9 186.78,386.76 190.5,386.76 190.5,423.24 251.49,423.24 251.49,144.0 189.72,144.0 189.72,251.49 186.0,251.49 186.0,144.0 12.51,144.0 12.51,287.49\"\\>\n</svg>\n",
+        "2OBrcmyk58NupXoVOHUtoa": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"12.51,354.39 186.78,354.39 186.78,287.49 12.51,287.49 12.51,354.39\"\\>\n</svg>\n",
+        "2OBrcmyk58NupXoVOHUtjR": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"143.1,423.24 186.78,423.24 186.78,358.11 143.1,358.11 143.1,423.24\"\\>\n</svg>\n",
+        "2OBrcmyk58NupXoVOHUtju": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"77.22,438.87 120.9,438.87 120.9,373.74 77.22,373.74 77.22,438.87\"\\>\n</svg>\n",
+        "2OBrcmyk58NupXoVOHUtgP": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"74.28,652.98 74.28,545.49 78.0,545.49 78.0,652.98 251.49,652.98 251.49,509.49 77.22,509.49 77.22,461.34 73.5,461.34 73.5,433.02 77.22,433.02 77.22,410.1 73.5,410.1 73.5,373.74 12.51,373.74 12.51,652.98 74.28,652.98\"\\>\n</svg>\n",
+        "2OBrcmyk58NupXoVOHUten": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"77.22,509.49 251.49,509.49 251.49,442.59 77.22,442.59 77.22,509.49\"\\>\n</svg>\n",
+        "1CZILmCaHETO8tf3SgGEWh": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"78.0,796.98 252.0,796.98 252.0,665.49 78.0,665.49 78.0,796.98\"\\>\n</svg>\n",
+        "1CZILmCaHETO8tf3SgGEXu": "<svg class=\"primary\" width=\"264.0\" height=\"796.98\" fill=\"white\">\n<polygon points=\"186.0,131.49 186.0,0.0 12.0,0.0 12.0,131.49 186.0,131.49\"\\>\n</svg>\n"
+    }
+}

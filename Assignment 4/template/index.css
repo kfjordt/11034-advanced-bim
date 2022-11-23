@@ -1,0 +1,93 @@
+/*
+ Theme Name: Ice Eats An Ice Cream
+ Description: CalStruct UI
+ Author: Kasper Jordt
+ Author URL:  https://github.com/kfjordt/11034-advanced-bim
+*/
+
+html, body {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.main_container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.heading_container {
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.user_input_field {
+    padding-top: 10px;
+    font-weight: normal;
+    font-size: 20;
+}
+
+.text_container {
+    flex: 1;
+    height: 100%;
+    border-right: 1px solid rgb(0, 0, 0);
+}  
+
+.drawing_container {
+    flex: 1;
+    height: 100%;
+}  
+
+.table_container {
+    padding: 10px;
+    height: 70%;
+    border-top: 1px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.input_cell, .input_input {
+    width: 70px;
+}
+
+table {
+    width: 100%; 
+}
+  
+.analysis_results {
+    /* height: 20%; */
+    border-top: 1px solid rgb(0, 0, 0);
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.section_current_selection_container {
+    display: flex;
+    width: 100%;
+    height: 30%;
+}
+
+.section_drawing {
+    flex: 0.7;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.current_selection {
+    flex: 0.3;
+    border-left: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.plan_drawing {
+    height: 70%;
+    border-top: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
