@@ -17,6 +17,7 @@ app.get('/', (request, response) => {
 // Send static files to the server
 app.use("/static", express.static('template'));
 app.use("/static", express.static('scripts'));
+app.use("/static", express.static('output'));
 
 // Run the website
 app.listen(process.env.PORT || 3000, () => console.log("Website running at: \t http://localhost:3000"))
