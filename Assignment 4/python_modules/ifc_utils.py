@@ -2,15 +2,25 @@ import ifcopenshell
 import ifcopenshell.geom
 import ifcopenshell.util.element
 from python_modules.classes_and_constants import *
+from python_modules.svg_utils import format_string
 from shapely.geometry import Polygon
 from shapely.ops import unary_union
+import os
 
 
-def load_model(file_path: str) -> ifcopenshell.file:
+def load_model() -> ifcopenshell.file:
     '''
     Loads an IFC model to memory.
     '''
-    return ifcopenshell.open(file_path)
+
+    all_models_present = [
+        file for file in os.listdir(MODEL_LOOKUP_DIRECTORY)
+        if file.split(".")[-1] == "ifc"
+    ]
+
+    all_models_present.sort()
+
+    return ifcopenshell.open(f"{MODEL_LOOKUP_DIRECTORY}/{all_models_present[0]}")
 
 
 def load_elements(ifc_model: ifcopenshell.file, ifc_types: list[str]) -> list[ifcopenshell.entity_instance]:
@@ -67,6 +77,7 @@ def get_element_properties(ifc_element: ifcopenshell.entity_instance) -> tuple:
     Indices:
     0 = volume, 1 = storey, 2 = ifc type, 3 = structural, 4 = id
     '''
+
     # Each different IFC type has different psets, meaning that each unique element type
     # has to be accessed differently
     element_psets = ifcopenshell.util.element.get_psets(ifc_element)
@@ -76,15 +87,12 @@ def get_element_properties(ifc_element: ifcopenshell.entity_instance) -> tuple:
     element_type = ifc_element.is_a()
 
     structural = element_type in STRUCTURAL_ELEMENT_TYPES
-
     lookup_path = STOREY_BY_TYPE[ifc_element.is_a()]
+
     element_storey = element_psets.get(lookup_path[0], {}).get(lookup_path[1])
     element_id = ifc_element[0]
 
-    if all([element_volume, element_storey]):
-        return (element_volume, element_storey, element_type, structural, element_id)
-    else:
-        return None
+    return (element_volume, element_storey, element_type, structural, element_id)
 
 
 def get_elements_polygons(ifc_element: ifcopenshell.entity_instance) -> list[tuple]:
@@ -139,7 +147,7 @@ def get_building_storeys(ifc_model: ifcopenshell.file) -> list[IfcFloor]:
             storey_height = abs(ifc_storeys[idx+1].Elevation  - ifc_storey.Elevation)
             storey_type = "Regular"
         else:
-            storey_height = 0
+            storey_height = 1  # Symbolic height
             storey_type = "Roof"
 
         if ifc_storey.Elevation < 0:
@@ -147,7 +155,7 @@ def get_building_storeys(ifc_model: ifcopenshell.file) -> list[IfcFloor]:
         
         ifc_floors.append(
             IfcFloor(
-                storey_name,storey_height, storey_type
+                storey_name, round(storey_height, 2), storey_type
             )
         )
     
@@ -172,8 +180,8 @@ def get_static_properties(ifc_model: ifcopenshell.file) -> tuple:
     return (project_name, formatted_address, site_elev, site_lat, site_long)
 
 
-def parse_model(file_path: str) -> list[IfcElement]:
-    model = load_model(file_path)
+def parse_model() -> list[IfcElement]:
+    model = load_model()
 
     element_types = STRUCTURAL_ELEMENT_TYPES + NON_STRUCTURAL_ELEMENT_TYPES
     elements = load_elements(model, element_types)
@@ -185,7 +193,7 @@ def parse_model(file_path: str) -> list[IfcElement]:
         properties = get_element_properties(element)
 
         # Guard clause
-        if not properties or not polygons or not materials:
+        if not polygons:
             continue
 
         volume = properties[0]
@@ -193,6 +201,9 @@ def parse_model(file_path: str) -> list[IfcElement]:
         ifc_type = properties[2]
         structural = properties[3]
         id = properties[4]
+
+        if not materials:
+            materials = [(f"{ifc_type} Generic Material", 1)]
 
         ifc_element = IfcElement(
             id,
@@ -241,7 +252,8 @@ def serialize_ifc_building_to_json(ifc_building: IfcBuilding):
         }
 
     for ifc_floor in ifc_building.ifc_floors:
-        ifc_building_json["ifc_floors"][ifc_floor.name] = {
+        ifc_building_json["ifc_floors"][format_string(ifc_floor.name)] = {
+            "name": ifc_floor.name,
             "height": ifc_floor.height,
             "floor_type": ifc_floor.floor_type
         }
