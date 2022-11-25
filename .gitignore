@@ -2,3 +2,5 @@
 /Assignment 4/python_modules/__pycache__
 /Assignment 4/__pycache__
 /Assignment 4/.vscode
+/Assignment 4/output/*
+!/Assignment 4/output/.gitkeep 
