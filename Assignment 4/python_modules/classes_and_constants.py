@@ -37,6 +37,8 @@ class IfcElement:
 
 
 class IfcBuilding:
+    ifc_floors: list[IfcFloor]
+
     def __init__(
         self, 
         project_name: str,
@@ -58,11 +60,8 @@ class IfcBuilding:
         self.ifc_floors = ifc_floors
         self.ifc_elements = ifc_elements
 
-
-class SvgPolygon:
-    def __init__(self, html_string: str, id: str) -> None:
-        self.html_string = html_string
-        self.id = id
+    def get_total_height(self):
+        return sum([floor.height for floor in self.ifc_floors])
 
 STOREY_BY_TYPE = {
     "IfcWall": ["PSet_Revit_Constraints", "Base Constraint"],
@@ -75,7 +74,7 @@ STOREY_BY_TYPE = {
 }
 
 COLORS_BY_IFC = {
-    "IfcSlab": "white",
+    "IfcSlab": "darkgrey",
     "IfcWall": "black",
     "IfcWallStandardCase": "black",
     "IfcDoor": "darkgrey",
@@ -98,5 +97,9 @@ GEOMETRY_SETTINGS.set(GEOMETRY_SETTINGS.USE_WORLD_COORDS, True)
 STRUCTURAL_ELEMENT_TYPES = ["IfcWall", "IfcBeam", "IfcRoof", "IfcSlab"]
 NON_STRUCTURAL_ELEMENT_TYPES = ["IfcDoor", "IfcWindow"]
 
+ELEMENT_TYPES_NOT_TO_BE_DRAWN = ["IfcBeam", "IfcSlab"]
+
 SIZE_FACTOR = 30
+
+MODEL_LOOKUP_DIRECTORY = "model"
 
