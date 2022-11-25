@@ -15,25 +15,25 @@
             <div class="heading_container">
                 CalStruct v0.1
                 <div class="user_input_field">
-                    <input type="submit" value="Calculate building">
+                    <input id="calculate_button" type="submit" value="Calculate building" onclick="calculateCostAndLoads()">
                 </div>
             </div>
             
             <div class="table_container">
-                <table>
+                <table id="user_input">
 
                 </table>
             </div>
-            <div class="analysis_results">Analysis results</div>
+            <div class="analysis_results">Press "Calculate building" to see analysis results.</div>
         </div>
 
         <div class="drawing_container">
             <div class="section_current_selection_container">
                 <div class="section_drawing"></div>
-                <div class="current_selection">Current selection</div>
+                <div class="current_selection">Nothing selected.</div>
             </div>
 
-            <div class="plan_drawing">Plan drawing</div>
+            <div class="plan_drawing">Press on a floor in the section view to select a plan drawing.</div>
         </div>
 
     </div>
