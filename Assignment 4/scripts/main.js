@@ -1,15 +1,16 @@
-let json_dump_global;
-
+// Read json file in global scope
+let jsonDumpGlobal;
 const res = await fetch('/static/data.json')
-json_dump_global = await res.json();
+jsonDumpGlobal = await res.json();
 
-let allElements = Object.keys(json_dump_global.ifc_elements)
-let allFloors = Object.keys(json_dump_global.ifc_floors)
+// Extract all the floor names and element ids
+let allElements = Object.keys(jsonDumpGlobal.ifc_elements)
+let allFloors = Object.keys(jsonDumpGlobal.ifc_floors)
 
-let calculations__global = {}
-
+// Add initial value for each floor and element id
+let calculationsGlobal = {}
 for (let i = 0; i < allElements.length; i++) {
-    calculations__global[allElements[i]] = {
+    calculationsGlobal[allElements[i]] = {
         "cost": "Nothing calculated yet.",
         "load": "Nothing calculated yet.",
         "carbon": "Nothing calculated yet."
@@ -17,91 +18,99 @@ for (let i = 0; i < allElements.length; i++) {
 }
 
 for (let i = 0; i < allFloors.length; i++) {
-    calculations__global[allFloors[i]] = {
+    calculationsGlobal[allFloors[i]] = {
         "cost": "Nothing calculated yet.",
         "load": "Nothing calculated yet.",
         "carbon": "Nothing calculated yet."
     }
 }
 
-
-document.addEventListener('DOMContentLoaded', main());
+// Add event listeners to the DOM and the button
+document.addEventListener('DOMContentLoaded', initializeUI());
 document.getElementById("calculate_button").onclick = calculateCostAndLoads
 
-async function main() {
-    let json_dump;
-
-    const res = await fetch('/static/data.json')
-    json_dump = await res.json();
-
-    createTable(json_dump)
-
-    loadDrawings("section")
-
+async function initializeUI() {
+    // Load the table and section drawing
+    createTable(jsonDumpGlobal)
+    loadSectionDrawing()
 }
 
 function createTable(json_dump) {
-    var unique_materials = json_dump.unique_materials
+    // Extract the unique materials from the data source
+    var uniqueMaterials = json_dump.unique_materials
 
-    const column_names = ["Cost\n\n[kr./m3]", "Density\n\n[kg./m3]", "Embodied Carbon\n[CO2/kg]"];
-    const column_names_shorthand = ["_cost", "_density", "_carbon"];
+    // Create variables for the material property columns
+    const columnNames = ["Cost\n\n[kr./m3]", "Density\n\n[kg./m3]", "Embodied Carbon\n[CO2/kg]"];
+    const columnNamesShorthand = ["_cost", "_density", "_carbon"];
 
+    // Grab the html table from the template
     let table = document.querySelector("table");
 
+    // Upper left corner
     let row = table.insertRow();
     let cell = row.insertCell();
 
-    for (var i = 0; i < column_names.length; i++) {
+    // In the first row, insert the material property categories
+    for (var i = 0; i < columnNames.length; i++) {
         let cell = row.insertCell();
-        let text = document.createTextNode(column_names[i]);
+        let text = document.createTextNode(columnNames[i]);
         cell.appendChild(text);
     }
 
-    for (var i = 0; i < unique_materials.length; i++) {
+    // Create rest of table in a nested for loop
+    for (var i = 0; i < uniqueMaterials.length; i++) {
+
+        // In the first column, add the material name
         let row = table.insertRow();
         let cell = row.insertCell();
-        let text = document.createTextNode(unique_materials[i]);
+        let text = document.createTextNode(uniqueMaterials[i]);
         cell.classList.add('material_name');
 
         cell.appendChild(text);
 
-        for (var j = 0; j < column_names.length; j++) {
+        for (var j = 0; j < columnNames.length; j++) {
+
+            // In the remaining three columns, add the respective material property
             let cell = row.insertCell();
             let input = document.createElement("input")
 
             cell.appendChild(input);
 
-            input.id = unique_materials[i] + column_names_shorthand[j]
+            // Add material id for later retrieval
+            input.id = uniqueMaterials[i] + columnNamesShorthand[j]
+
+            // Set input value to 100
             input.value = "100"
 
             cell.classList.add('input_cell');
             input.classList.add('input_input');
         }
     }
-
-
 }
 
-async function loadDrawings(level_name) {
-    let section_div = document.getElementsByClassName("section_drawing")[0]
+async function loadSectionDrawing(level_name) {
+    // Grab html section drawing container and reset it
+    let sectionDiv = document.getElementsByClassName("section_drawing")[0]
+    sectionDiv.innerHTML = ""
 
-    section_div.innerHTML = ""
-
+    // Read the raw text content of the section drawing
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', `static/${level_name}.html`, true);
+    xhr.open('GET', `static/section.html`, true);
     xhr.onreadystatechange = async function () {
         if (this.readyState !== 4) return;
         if (this.status !== 200) return;
-        section_div.innerHTML = this.responseText;
+        sectionDiv.innerHTML = this.responseText;
     };
-
     xhr.send();
 
     // Thankfully this is not a programming course
     await new Promise(r => setTimeout(r, 50));
 
+    // Grab all svg polygons from the section drawing
     const svgDrawings = document.querySelectorAll('.ifc_floor');
 
+    // A mouse click on one of the svg polygons will change the current 
+    // selection div and also change the plan drawing accordingly
     Array.from(svgDrawings).forEach(function (svgDrawing) {
         svgDrawing.addEventListener('click', function () {
             updateCurrentSelectionWithFloor(svgDrawing.id)
@@ -112,45 +121,49 @@ async function loadDrawings(level_name) {
 }
 
 async function updateCurrentSelectionWithFloor(floorId) {
-    let floor_data = json_dump_global["ifc_floors"][floorId]
+    // Fetch the associated floor data
+    let floorData = jsonDumpGlobal["ifc_floors"][floorId]
 
-    let current_selecton_div = document.getElementsByClassName("current_selection")[0]
+    // Grab the current selection div
+    let currentSelectionDiv = document.getElementsByClassName("current_selection")[0]
 
-    let floorCost = calculations__global[floorId]["cost"]
-    let floorLoads = calculations__global[floorId]["load"]
-    let floorCarbon = calculations__global[floorId]["carbon"]
+    // Fetch the current data of the global calculation object
+    let floorCost = calculationsGlobal[floorId]["cost"]
+    let floorLoads = calculationsGlobal[floorId]["load"]
+    let floorCarbon = calculationsGlobal[floorId]["carbon"]
 
-    current_selecton_div.innerHTML =
-
-    `<b>${floor_data["name"]}</b><br>
-    Floor type: ${floor_data["floor_type"]}<br>
-    Floor height: ${floor_data["height"]}<br>
-    Cost: ${floorCost}<br>
-    Loads: ${floorLoads}<br>
-    Embodied carbon: ${floorCarbon}`
+    // Add this data to the current selection div
+    currentSelectionDiv.innerHTML =
+        `<b>${floorData["name"]}</b><br>
+        Floor type: ${floorData["floor_type"]}<br>
+        Floor height: ${floorData["height"]}<br>
+        Cost: ${floorCost}<br>
+        Loads: ${floorLoads}<br>
+        Embodied carbon: ${floorCarbon}`
 
 }
 
 async function changePlanDrawing(floorId) {
+    // Grab the plan drawing container from the html and reset it
+    let planDiv = document.getElementsByClassName("plan_drawing")[0]
+    planDiv.innerHTML = ""
 
-    let plan_div = document.getElementsByClassName("plan_drawing")[0]
-
-    plan_div.innerHTML = ""
-
+    // Read the raw text content of the respective drawing
     var xhr = new XMLHttpRequest();
     xhr.open('GET', `static/${floorId}.html`, true);
     xhr.onreadystatechange = async function () {
         if (this.readyState !== 4) return;
         if (this.status !== 200) return;
-        plan_div.innerHTML = this.responseText;
+        planDiv.innerHTML = this.responseText;
     };
 
     xhr.send();
 
     await new Promise(r => setTimeout(r, 50));
 
+    // Grab all individual ifc elements and add event listeners to
+    // each of them
     const ifcElements = document.querySelectorAll('.ifc_element');
-
     Array.from(ifcElements).forEach(function (ifcElement) {
         ifcElement.addEventListener('click', function () {
             updateCurrentSelectionWithElement(ifcElement.id)
@@ -159,14 +172,15 @@ async function changePlanDrawing(floorId) {
 }
 
 async function updateCurrentSelectionWithElement(elementId) {
-    let elementType = json_dump_global["ifc_elements"][elementId]["type"]
-    let elementCost = calculations__global[elementId]["cost"]
-    let elementLoads = calculations__global[elementId]["load"]
-    let elementCarbon = calculations__global[elementId]["carbon"]
+    // fetch data associated with currently selected ifc element
+    let elementType = jsonDumpGlobal["ifc_elements"][elementId]["type"]
+    let elementCost = calculationsGlobal[elementId]["cost"]
+    let elementLoads = calculationsGlobal[elementId]["load"]
+    let elementCarbon = calculationsGlobal[elementId]["carbon"]
 
-    let current_selecton_div = document.getElementsByClassName("current_selection")[0]
-
-    current_selecton_div.innerHTML = `<b>Building element</b><br>
+    // Grab div of current selection container and update its inner HTML
+    let currentSelectionDiv = document.getElementsByClassName("current_selection")[0]
+    currentSelectionDiv.innerHTML = `<b>Building element</b><br>
     Element type: ${elementType}<br>
     Element id: ${elementId}<br>
     Cost: ${elementCost}<br>
@@ -200,7 +214,7 @@ function parseTextFromTable() {
             alert("Incorrect input detected, try again.")
             return null;
         }
-    
+
         // Update the object containing the cost and densities
         materialsByCostDensity[materialName.replace(/\n/ig, '')] = {
             "Density": materialDensity,
@@ -209,79 +223,93 @@ function parseTextFromTable() {
         }
 
     }
-    
+
     return materialsByCostDensity;
 }
 
 function calculateCostAndLoads() {
     // When button is pressed, read the user input from the table
-    let materials_cost_densities = parseTextFromTable()
- 
+    let materialCostDensities = parseTextFromTable()
+
+    // Make the global calculation object contain floats and not strings
     for (let i = 0; i < allFloors.length; i++) {
         let floorName = allFloors[i]
-        calculations__global[floorName]["cost"] = 0
-        calculations__global[floorName]["load"] = 0
-        calculations__global[floorName]["carbon"] = 0
+        calculationsGlobal[floorName]["cost"] = 0
+        calculationsGlobal[floorName]["load"] = 0
+        calculationsGlobal[floorName]["carbon"] = 0
     }
 
+    // Calculation results for entire building
     let finalCost = 0;
     let finalCarbon = 0;
 
-    let allElements = json_dump_global["ifc_elements"]
+    // Grab all elements
+    let allElements = jsonDumpGlobal["ifc_elements"]
 
+    // Begin iteration over all the elements in the building
     for (let elementId in allElements) {
-        let volume =  allElements[elementId]["volume"]
+        let volume = allElements[elementId]["volume"]
 
+        // Guard clause, if the element has no volume, it is not
+        // eligible for further calculations
         if (!volume) {
             continue
         }
 
         let materials = allElements[elementId]["materials"]
 
+        // Initialize variables for the current element
         let elementCost = 0
         let elementLoad = 0
         let elementCarbon = 0
 
         for (let i = 0; i < materials.length; i++) {
-            
+
+            // For each material in the material list tuple, add the resulting
+            // number to the element variable
             let material_name = materials[i][0]
             let material_percent = materials[i][1]
-            
-            let current_material_props  = materials_cost_densities[material_name]
-            
+
+            let current_material_props = materialCostDensities[material_name]
+
             let currentMaterialCost = material_percent * volume * current_material_props["Cost"]
             let currentMaterialLoad = material_percent * volume * current_material_props["Density"] * 9.82
             let currentMaterialCarbon = material_percent * volume * current_material_props["Carbon"]
-            
+
             elementCost += currentMaterialCost
             elementLoad += currentMaterialLoad
             elementCarbon += currentMaterialCarbon
-            
+
+            // Also add it to the number for the entire building
             finalCost += currentMaterialCost
             finalCarbon += currentMaterialCarbon
         }
-        
-        let currentFloor = allElements[elementId]["storey"].replace(" ", "").replace("/","").toLowerCase()
 
-        calculations__global[currentFloor]["cost"] += Math.round(elementCost)
-        calculations__global[currentFloor]["load"] += Math.round(elementLoad / 1000)
-        calculations__global[currentFloor]["carbon"] += Math.round(elementCarbon)
+        // Format the floor name of the current element to comply with the keys
+        // found in the global object
+        let currentFloor = allElements[elementId]["storey"].replace(" ", "").replace("/", "").toLowerCase()
 
-        calculations__global[elementId]["cost"] = Math.round(elementCost) + " kr."
-        calculations__global[elementId]["load"] = Math.round(elementLoad / 1000) + " kN"
-        calculations__global[elementId]["carbon"] = Math.round(elementCarbon) + " CO2"
-        
+        // Add the results to the given floor and the given element
+        calculationsGlobal[currentFloor]["cost"] += Math.round(elementCost)
+        calculationsGlobal[currentFloor]["load"] += Math.round(elementLoad / 1000)
+        calculationsGlobal[currentFloor]["carbon"] += Math.round(elementCarbon)
+
+        calculationsGlobal[elementId]["cost"] = Math.round(elementCost) + " kr."
+        calculationsGlobal[elementId]["load"] = Math.round(elementLoad / 1000) + " kN"
+        calculationsGlobal[elementId]["carbon"] = Math.round(elementCarbon) + " CO2"
+
     }
 
+    // Append the units to the final results
     for (let i = 0; i < allFloors.length; i++) {
         let floorName = allFloors[i]
-        calculations__global[floorName]["cost"] += " kr."
-        calculations__global[floorName]["load"] += " kN"
-        calculations__global[floorName]["carbon"] += " CO2"
+        calculationsGlobal[floorName]["cost"] += " kr."
+        calculationsGlobal[floorName]["load"] += " kN"
+        calculationsGlobal[floorName]["carbon"] += " CO2"
     }
 
     // Update the final cost in the HTML
-    document.getElementsByClassName("analysis_results")[0].innerHTML = 
-    `Total cost of building: ${Math.round(finalCost)}  kr.<br>
+    document.getElementsByClassName("analysis_results")[0].innerHTML =
+        `Total cost of building: ${Math.round(finalCost)}  kr.<br>
     Total carbon footprint of building: ${Math.round(finalCarbon)} CO2`
 }

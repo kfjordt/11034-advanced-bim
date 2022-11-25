@@ -10,7 +10,7 @@ import os
 
 def load_model() -> ifcopenshell.file:
     '''
-    Loads an IFC model to memory.
+    Loads the first (alphabetically sorted) model from the /model folder. 
     '''
 
     all_models_present = [
@@ -73,9 +73,13 @@ def get_element_materials(ifc_element: ifcopenshell.entity_instance) -> list[tup
 def get_element_properties(ifc_element: ifcopenshell.entity_instance) -> tuple:
     '''
     Gets the element psets according to the element type.
-    
-    Indices:
-    0 = volume, 1 = storey, 2 = ifc type, 3 = structural, 4 = id
+    \n\n
+    Indices:\n
+    0 = volume\n
+    1 = storey\n
+    2 = ifc type\n
+    3 = structural?\n
+    4 = id
     '''
 
     # Each different IFC type has different psets, meaning that each unique element type
@@ -136,23 +140,35 @@ def get_elements_polygons(ifc_element: ifcopenshell.entity_instance) -> list[tup
 
 
 def get_building_storeys(ifc_model: ifcopenshell.file) -> list[IfcFloor]:
+    '''
+    Extracts the building storeys from an IFC model.
+    Returns a sorted and classified list of IfcFloor instances.
+    '''
+
+    # Load all IfcBuildingStoreys from model and sorts them according to elevation
     ifc_storeys = load_elements(ifc_model, ["IfcBuildingStorey"])
     ifc_storeys.sort(key=lambda x: x.Elevation, reverse=False)
     
     ifc_floors = []
+    # Begin iteration over each storey
     for idx, ifc_storey in enumerate(ifc_storeys):
         storey_name = ifc_storey.Name
 
+        # Standard case is a regular floor type
         if idx < len(ifc_storeys) - 1:
             storey_height = abs(ifc_storeys[idx+1].Elevation  - ifc_storey.Elevation)
             storey_type = "Regular"
+        
+        # If it is the last index, this means that the floor type is roof
         else:
             storey_height = 1  # Symbolic height
             storey_type = "Roof"
 
+        # If the elevation is below 0, overwrite the floor type
         if ifc_storey.Elevation < 0:
             storey_type = "Basement"
         
+        # Create instance of IfcFloor and add it to return variable
         ifc_floors.append(
             IfcFloor(
                 storey_name, round(storey_height, 2), storey_type
@@ -163,6 +179,16 @@ def get_building_storeys(ifc_model: ifcopenshell.file) -> list[IfcFloor]:
 
 
 def get_static_properties(ifc_model: ifcopenshell.file) -> tuple:
+    '''
+    Reads the "basic" properties associated with an ifc model.
+    \n\n
+    Indices:\n
+    0 = project name\n
+    1 = project address\n
+    2 = site elevation\n
+    3 = site latitude\n
+    4 = site longitude
+    '''
     # Getting the project name of the IFC model  
     project_name = ifc_model.by_type('IfcProject')[0].LongName
 
@@ -180,51 +206,60 @@ def get_static_properties(ifc_model: ifcopenshell.file) -> tuple:
     return (project_name, formatted_address, site_elev, site_lat, site_long)
 
 
-def parse_model() -> list[IfcElement]:
+def parse_model() -> IfcBuilding:
+    '''
+    Creates an instance of IfcBuilding.\n
+    Will automatically load the first building in the /model folder.
+    '''
     model = load_model()
 
+    # Get all (both structural and nonstructural elements)
     element_types = STRUCTURAL_ELEMENT_TYPES + NON_STRUCTURAL_ELEMENT_TYPES
     elements = load_elements(model, element_types)
 
     ifc_elements = []
+    # Begin iteration over all the elements
     for element in elements:
+
+        # Extract relevant data about the current element
         materials = get_element_materials(element)
         polygons = get_elements_polygons(element)
         properties = get_element_properties(element)
 
-        # Guard clause
+        # Guard clause. If there are no polygons, later calculatons will
+        # break the program
         if not polygons:
             continue
 
-        volume = properties[0]
-        storey = properties[1]
-        ifc_type = properties[2]
-        structural = properties[3]
-        id = properties[4]
-
+        # If the given element does not contain material, assign a generic one
         if not materials:
-            materials = [(f"{ifc_type} Generic Material", 1)]
+            materials = [(f"{properties[2]} Generic Material", 1)]
 
+        # Instantiate an IfcElement
         ifc_element = IfcElement(
-            id,
-            polygons, 
-            volume,
-            storey,
-            ifc_type,
-            materials,
-            structural
+            id=properties[4],
+            polygons=polygons, 
+            volume=properties[0],
+            floor_str=properties[1],
+            type=properties[2],
+            materials=materials,
+            structural=properties[3]
         )
 
         ifc_elements.append(ifc_element)
 
+    # List comprehension to extract all unique materials from building
     unique_materials = list(set([materials[0]
                    for sublist in [ifc_element.materials for ifc_element in ifc_elements] 
                    for materials in sublist]))
 
+    # Extract static properties of model
     project_name, formatted_address, site_elev, site_lat, site_long = get_static_properties(model)
 
+    # Classify and sort the storeys of the model
     ifc_storeys = get_building_storeys(model)
 
+    # Instantiate an IfcBuilding and return it
     ifc_building = IfcBuilding(
         project_name,
         formatted_address,
@@ -240,6 +275,11 @@ def parse_model() -> list[IfcElement]:
 
 
 def serialize_ifc_building_to_json(ifc_building: IfcBuilding):
+    '''
+    Stringifies all data properties of an instance of IfcBuilding.
+    '''
+
+    # Assign variables at top level (IfcBuilding)
     ifc_building_json = {
             "project_name": ifc_building.project_name,
             "address": ifc_building.address,
@@ -251,6 +291,7 @@ def serialize_ifc_building_to_json(ifc_building: IfcBuilding):
             "ifc_elements": {},
         }
 
+    # Assign variables at medium level (IfcFloors)
     for ifc_floor in ifc_building.ifc_floors:
         ifc_building_json["ifc_floors"][format_string(ifc_floor.name)] = {
             "name": ifc_floor.name,
@@ -258,8 +299,8 @@ def serialize_ifc_building_to_json(ifc_building: IfcBuilding):
             "floor_type": ifc_floor.floor_type
         }
 
+    # Assign variables at lowest level (IfcElements)
     for ifc_element in ifc_building.ifc_elements:
-
         ifc_building_json["ifc_elements"][ifc_element.id] = {
             "storey": ifc_element.storey,
             "type": ifc_element.type,

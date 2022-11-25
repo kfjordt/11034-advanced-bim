@@ -1,6 +1,8 @@
+# Various class definitions and constants which will be accessed
+# throughout the program.
+
 import ifcopenshell.geom
 from shapely.geometry import Polygon
-
 
 class IfcFloor:
     def __init__(
@@ -102,4 +104,5 @@ ELEMENT_TYPES_NOT_TO_BE_DRAWN = ["IfcBeam", "IfcSlab"]
 SIZE_FACTOR = 30
 
 MODEL_LOOKUP_DIRECTORY = "model"
+OUTPUT_FOLDER = "output"
 
